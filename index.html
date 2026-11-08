@@ -1196,6 +1196,76 @@ window.TG_ANALYTICS = {
 @media (max-width:600px){.tg-consent{left:16px;right:16px;bottom:16px;max-width:none;padding:20px}}
 @media (prefers-reduced-motion:reduce){.tg-consent{transition:none}}
 
+
+/* ===== Motion & banners pass: three.js scenes, marquee band, opening window ===== */
+:root{--ease-expo:cubic-bezier(.16,1,.3,1);--ease-soft:cubic-bezier(.33,1,.68,1)}
+.tg-gl{position:absolute;left:0;top:0;display:block;pointer-events:none;opacity:0;transition:opacity 1.4s var(--ease-out)}
+.tg-gl.is-on{opacity:1}
+.tg-gl-orbit{z-index:3}
+.tg-gl-field{z-index:0}
+/* belief banner becomes a field at dusk (WebGL), flat green until it loads */
+.belief-banner{position:relative;overflow:hidden;min-height:min(680px,92svh);display:flex;align-items:flex-start;padding:120px 0 260px!important}
+.belief-banner>.container{position:relative;z-index:1}
+.belief-banner .btn-gold{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+/* masked line rise for section headings */
+[data-lines] .tg-line{display:block;overflow:clip;padding-bottom:.12em;margin-bottom:-.12em}
+[data-lines] .tg-line>span{display:block}
+@media (prefers-reduced-motion:no-preference){
+  .tg-split .tg-line>span{transform:translateY(110%)}
+  .tg-split.tg-lin .tg-line>span{transform:none;transition:transform 900ms var(--ease-expo) calc(var(--i)*90ms)}
+}
+/* the band: what we work with, moving with the scroll */
+.tg-band{background:#C69C5E;color:var(--dark-green);padding:44px 0 40px;overflow:hidden}
+.tg-band-row{display:flex;width:max-content}
+.tg-band-track{display:flex;align-items:center;flex-shrink:0;gap:0}
+.tg-band-word{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(38px,5.6vw,84px);line-height:1.1;letter-spacing:-.01em;white-space:nowrap;padding:0 .35em}
+.tg-band-leaf{width:clamp(22px,2.4vw,34px);height:auto;flex-shrink:0;fill:var(--dark-green);opacity:.85}
+.tg-band-photos{margin-top:26px}
+.tg-band-photos .tg-band-track{gap:18px;padding-right:18px}
+.tg-band-photos img{width:clamp(150px,15vw,220px);aspect-ratio:3/2;height:auto;object-fit:cover;border-radius:18px;display:block}
+@media (prefers-reduced-motion:no-preference){
+  .tg-band-row{animation:tgBand 70s linear infinite}
+  .tg-band-photos{animation-duration:90s;animation-direction:reverse}
+  .tg-band.is-paused .tg-band-row{animation-play-state:paused}
+}
+@keyframes tgBand{to{transform:translateX(-50%)}}
+/* opening window: the farmland opens from a window to the whole screen as you scroll */
+.tg-window{position:relative;background:var(--dark-green)}
+.tg-window-stage{position:relative;height:78svh;min-height:420px;overflow:clip}
+.tg-window-stage img{display:block;width:100%;height:100%;object-fit:cover}
+.tg-window-stage::after{content:'';position:absolute;inset:0;background:#0B2618;opacity:.32;pointer-events:none}
+.tg-window-line{position:absolute;left:0;right:0;bottom:12%;z-index:1;margin:0;padding:0 24px;text-align:center;color:#fff;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(32px,4.6vw,68px);line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion:no-preference){
+    .tg-window{height:200svh;view-timeline-name:--tgwin}
+    .tg-window-stage{position:sticky;top:0;height:100svh;animation:tgWin linear both;animation-timeline:--tgwin;animation-range:contain 0% contain 70%}
+    .tg-window-stage img{animation:tgWinImg linear both;animation-timeline:--tgwin;animation-range:contain 0% contain 70%}
+    .tg-window-stage::after{animation:tgWinDim linear both;animation-timeline:--tgwin;animation-range:contain 30% contain 70%}
+    .tg-window-line{animation:tgWinLine linear both;animation-timeline:--tgwin;animation-range:contain 45% contain 75%}
+    /* hero recedes as it leaves */
+    .hero{view-timeline-name:--tghero}
+    .hero .hero-grid{animation:tgHeroLift linear both;animation-timeline:--tghero;animation-range:exit 0% exit 80%}
+    /* OSOEAZY picture drifts inside its frame */
+    .osoeazy-product-img{animation:tgDriftY linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
+    .eco-photo img{animation:tgEcoIn linear both;animation-timeline:view();animation-range:entry 0% entry 100%}
+  }
+}
+@media (max-width:700px){.tg-window{--wx:7%;--wy:20%}.tg-window-stage img{object-position:22% 50%}}
+@keyframes tgWin{from{clip-path:inset(var(--wy,18%) var(--wx,26%) round 28px)}to{clip-path:inset(0 0 0 0 round 0)}}
+@keyframes tgWinImg{from{scale:1.18}to{scale:1}}
+@keyframes tgWinDim{from{opacity:0}to{opacity:.32}}
+@keyframes tgWinLine{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+@keyframes tgHeroLift{to{translate:0 -8%;opacity:.2}}
+@keyframes tgDriftY{from{translate:0 5%}to{translate:0 -5%}}
+@keyframes tgEcoIn{from{scale:1.25}to{scale:1}}
+/* press feedback everywhere it is missing */
+.tg-form button:active,.btn-gold:active{transform:scale(.97)}
+@media (max-width:700px){
+  .tg-band{padding:30px 0 28px}
+  .tg-band-photos{margin-top:18px}
+  .belief-banner{min-height:640px;padding:88px 0 280px!important}
+}
+
 /* SEO / speed pass */
 .tg-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .tg-intro-logo,.tg-intro-lede,.tg-intro-inner>.btn-gold{opacity:1!important;transform:none!important;animation:none!important}
@@ -1290,7 +1360,7 @@ window.TG_ANALYTICS = {
     <div class="container">
       <div class="story-grid">
         <div>
-          <h2 class="section-heading">Good Products Begin at the Source</h2>
+          <h2 class="section-heading" data-lines>Good Products Begin at the Source</h2>
           <p class="body-copy">
             Transglobal Food Tech is a food, nutrition and wellness holding company that connects farmers, natural ingredients, innovation and consumers.
           </p>
@@ -1332,10 +1402,19 @@ window.TG_ANALYTICS = {
   </section>
 
   <!-- OUR FARMER INITIATIVE -->
+
+  <!-- OPENING WINDOW BANNER -->
+  <section class="tg-window" aria-label="From farmers to families">
+    <div class="tg-window-stage">
+      <img src="assets/img/fields-1600.webp" srcset="assets/img/fields-900.webp 900w, assets/img/fields-1600.webp 1600w, assets/img/fields-2400.webp 2400w" sizes="100vw" width="1600" height="800" alt="Farmland at golden hour, farmers carrying baskets of fresh produce along a path" loading="lazy" decoding="async">
+      <p class="tg-window-line">From farmers to families.<br>From India to the world.</p>
+    </div>
+  </section>
+
   <section id="farmer" class="section-padding farmer-section">
     <div class="container story-grid" style="margin-bottom: 0;">
       <div>
-        <h2 class="section-heading">From Farm to Future</h2>
+        <h2 class="section-heading" data-lines>From Farm to Future</h2>
         <p class="body-copy">
           We believe farmers should be an integral part of the value chain. We work directly with farmers and source their produce, helping create sustainable opportunities for them.
         </p>
@@ -1354,7 +1433,7 @@ window.TG_ANALYTICS = {
   <section id="what-we-do" class="section-padding">
     <div class="container">
       <div class="center-header">
-        <h2 class="section-heading">A Complete Food &amp; Wellness Ecosystem</h2>
+        <h2 class="section-heading" data-lines>A Complete Food &amp; Wellness Ecosystem</h2>
         <p class="body-copy">From ingredients to finished products, we operate across the entire food and wellness value chain.</p>
       </div>
 
@@ -1395,6 +1474,13 @@ window.TG_ANALYTICS = {
     </div>
   </section>
 
+
+  <!-- BAND: what we work with -->
+  <section class="tg-band" aria-label="What we work with">
+    <div class="tg-band-row"><div class="tg-band-track"><span class="tg-band-word">Fresh &amp; Natural Ingredients</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Fruits &amp; Vegetables</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Spices &amp; Botanicals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Food &amp; Beverages</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Freeze-Dried Foods</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Nutraceuticals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Wellness Products</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Natural Cosmetics</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg></div><div class="tg-band-track" aria-hidden="true"><span class="tg-band-word">Fresh &amp; Natural Ingredients</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Fruits &amp; Vegetables</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Spices &amp; Botanicals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Food &amp; Beverages</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Freeze-Dried Foods</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Nutraceuticals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Wellness Products</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Natural Cosmetics</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg></div></div>
+    <div class="tg-band-row tg-band-photos" aria-hidden="true"><div class="tg-band-track"><img src="assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></div><div class="tg-band-track"><img src="assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></div></div>
+  </section>
+
   <!-- OUR BRAND: OSOEAZY -->
   <section id="brands" class="osoeazy-banner">
     <div class="container osoeazy-grid">
@@ -1420,7 +1506,7 @@ window.TG_ANALYTICS = {
   <section class="multibrand-bar">
     <div class="container multibrand-flex">
       <div style="max-width: 580px;">
-        <h2 class="section-heading" style="margin-bottom: 14px;">A Multi-Brand Platform</h2>
+        <h2 class="section-heading" data-lines style="margin-bottom: 14px;">A Multi-Brand Platform</h2>
         <p class="body-copy" style="margin-bottom: 0;">
           OSOEAZY is just the beginning. Transglobal Food Tech is being built as a multi-brand platform, developing and building new brands across food, nutrition, wellness and natural products.
         </p>
@@ -1432,7 +1518,7 @@ window.TG_ANALYTICS = {
   <!-- OUR FOUNDERS -->
   <section id="founders" class="section-padding">
     <div class="container">
-      <h2 class="section-heading">Entrepreneurship. Impact. A Shared Vision.</h2>
+      <h2 class="section-heading" data-lines>Entrepreneurship. Impact. A Shared Vision.</h2>
 
       <div class="founders-grid">
         <!-- Visha Michelle Iyer -->
@@ -1464,7 +1550,7 @@ window.TG_ANALYTICS = {
   <!-- OUR BELIEF CTA -->
   <section class="belief-banner">
     <div class="container">
-      <h2>Better Food. Stronger Farmers. Healthier Lives.</h2>
+      <h2 data-lines>Better Food. Stronger Farmers. Healthier Lives.</h2>
       <p>By connecting farmers to innovation and innovation to consumers, we can create better value for everyone.</p>
       <a href="#contact" class="btn-gold">Be Part of Our Journey →</a>
     </div>
@@ -1522,7 +1608,7 @@ window.TG_ANALYTICS = {
   <script>
   (function(){
     document.documentElement.classList.add('tg-js');
-    var sel='.hero-title,.hero-sub,.hero .btn-gold,.hero-floating-tag,.pillar-title,.section-heading,.body-copy,.vmp-card,.eco-card,.osoeazy-title,.osoeazy-subtitle,.osoeazy-desc,.osoeazy-banner .btn-gold,.tg-next,.founder-card,.belief-banner h2,.belief-banner p,.belief-banner .btn-gold,#story .btn-gold,#farmer .btn-gold';
+    var sel='.hero-title,.hero-sub,.hero .btn-gold,.hero-floating-tag,.pillar-title,.body-copy,.vmp-card,.eco-card,.osoeazy-title,.osoeazy-subtitle,.osoeazy-desc,.osoeazy-banner .btn-gold,.tg-next,.founder-card,.belief-banner p,.belief-banner .btn-gold,#story .btn-gold,#farmer .btn-gold';
     var els=[].slice.call(document.querySelectorAll(sel)); els.forEach(function(el){el.classList.add('tg-reveal');});
     var clips=[].slice.call(document.querySelectorAll('.framed-image-box,.farmer-image,.osoeazy-showcase,.founder-photo')); clips.forEach(function(el){el.classList.add('tg-clip');});
     var scenes=[].slice.call(document.querySelectorAll('.hero')); scenes.forEach(function(el){el.classList.add('tg-scene');});
@@ -1569,6 +1655,52 @@ window.TG_ANALYTICS = {
 })();
 </script>
 
+<script>
+/* Headings rise line by line (Taste "Lines that rise on scroll") */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('[data-lines]'));
+  if(!els.length||!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function restore(el){ el.textContent=el.dataset.text; el.classList.remove('tg-split','tg-lin'); }
+  function split(el){
+    var text=el.textContent.trim().replace(/\s+/g,' '); el.dataset.text=text; el.textContent='';
+    var words=text.split(' ').map(function(w){ var s=document.createElement('span'); s.style.display='inline-block'; s.textContent=w; el.append(s,' '); return s; });
+    var lines=[]; words.forEach(function(w){ var last=lines[lines.length-1]; if(last&&Math.abs(last.top-w.offsetTop)<4) last.words.push(w.textContent); else lines.push({top:w.offsetTop,words:[w.textContent]}); });
+    el.textContent='';
+    lines.forEach(function(l,i){ var m=document.createElement('span'), n=document.createElement('span'); m.className='tg-line'; n.style.setProperty('--i',i); n.textContent=l.words.join(' '); m.append(n); el.append(m,' '); });
+    el.classList.add('tg-split');
+  }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; io.unobserve(e.target); var t=e.target; t.classList.add('tg-lin'); var last=t.querySelector('.tg-line:last-of-type > span'); if(last) last.addEventListener('transitionend',function(){restore(t);},{once:true}); else restore(t); }); },{rootMargin:'0px 0px -12% 0px'});
+  (document.fonts&&document.fonts.ready||Promise.resolve()).then(function(){ els.forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<innerHeight*0.88) return; split(el); io.observe(el); }); });
+  var w=innerWidth; addEventListener('resize',function(){ if(innerWidth===w) return; w=innerWidth; els.forEach(function(el){ if(el.classList.contains('tg-split')&&!el.classList.contains('tg-lin')){ io.unobserve(el); restore(el); } }); });
+})();
+/* The band speeds up with the scroll, then settles; pauses off screen and on hover */
+(function(){
+  var band=document.querySelector('.tg-band'); if(!band||matchMedia('(prefers-reduced-motion: reduce)').matches||!band.getAnimations) return;
+  var rows=[].slice.call(band.querySelectorAll('.tg-band-row')), boost=0, lastY=scrollY, raf=0;
+  function anims(){ return rows.map(function(r){ return r.getAnimations()[0]; }).filter(Boolean); }
+  function tick(){ boost*=0.92; anims().forEach(function(a){ a.playbackRate=1+boost; }); raf=boost>0.02?requestAnimationFrame(tick):0; }
+  addEventListener('scroll',function(){ var y=scrollY; boost=Math.min(7,boost+Math.abs(y-lastY)*0.04); lastY=y; if(!raf) raf=requestAnimationFrame(tick); },{passive:true});
+  new IntersectionObserver(function(es){ band.classList.toggle('is-paused',!es[0].isIntersecting); }).observe(band);
+  band.addEventListener('mouseenter',function(){ band.classList.add('is-paused'); });
+  band.addEventListener('mouseleave',function(){ band.classList.remove('is-paused'); });
+})();
+/* 3D scenes (three.js) load only after the page has finished loading, never on reduced motion or data saver */
+(function(){
+  var c=navigator.connection, save=c&&(c.saveData||/(^|-)2g/.test(c.effectiveType||''));
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||save) return;
+  try{ var t=document.createElement('canvas'); if(!(t.getContext('webgl2')||t.getContext('webgl'))) return; }catch(e){ return; }
+  function go(){
+    import('./assets/js/tg-scenes.js').then(function(m){
+      var intro=document.querySelector('.tg-intro'), logo=document.querySelector('.tg-intro-img');
+      try{ if(intro&&logo) m.mountOrbit(intro,logo); }catch(e){}
+      var b=document.querySelector('.belief-banner');
+      if(b){ var o=new IntersectionObserver(function(es){ if(es[0].isIntersecting){ o.disconnect(); try{ m.mountField(b); }catch(e){} } },{rootMargin:'700px 0px'}); o.observe(b); }
+    }).catch(function(){});
+  }
+  function idle(){ (window.requestIdleCallback||function(f){setTimeout(f,300)})(go,{timeout:2500}); }
+  if(document.readyState==='complete') idle(); else addEventListener('load',idle);
+})();
+</script>
 <div class="tg-consent" id="tg-consent" role="dialog" aria-live="polite" aria-labelledby="tg-consent-title" hidden>
   <h2 id="tg-consent-title">Help us improve this site</h2>
   <p>With your permission we use Google Analytics and Microsoft Clarity to understand how visitors use the site. Nothing is collected until you accept.</p>
