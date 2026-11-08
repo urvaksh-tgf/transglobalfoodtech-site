@@ -2,6 +2,35 @@
 <html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="EFiBTJzi8Wwt1bRlg1ZehR-D6aKbQuU1BrXmGU25MB4">
+<!-- Analytics: GA4 (Consent Mode v2) + Microsoft Clarity. Edit the three IDs here only. -->
+<script>
+window.TG_ANALYTICS = {
+  ga4: 'G-X6LMX9VR0Y',     /* Google Analytics 4 measurement ID */
+  clarity: 'CLARITY-ID',   /* Microsoft Clarity project ID */
+  hosts: /(^|\.)transglobalfoodtech\.com$/i  /* analytics only load on the live domain */
+};
+window.dataLayer = window.dataLayer || [];
+function gtag(){ dataLayer.push(arguments); }
+gtag('consent', 'default', {
+  ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  analytics_storage: 'denied', functionality_storage: 'granted', security_storage: 'granted',
+  wait_for_update: 500
+});
+gtag('set', 'ads_data_redaction', true);
+(function(){
+  var A = window.TG_ANALYTICS, choice = null;
+  try { choice = localStorage.getItem('tg-consent'); } catch(e) {}
+  if (choice === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  A.live = A.hosts.test(location.hostname) || /[?&]tg_analytics=1/.test(location.search);
+  if (!A.live || !/^G-[A-Z0-9]{6,}$/.test(A.ga4) || A.ga4 === 'G-XXXXXXX') return;
+  var s = document.createElement('script'); s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + A.ga4;
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', A.ga4);
+})();
+</script>
 <title>TransGlobal Food Tech | Food. Nutrition. Wellness. Innovation.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -1063,6 +1092,23 @@
 .tg-staging .tg-env{display:block}
 @media (max-width:900px){.tg-enquire{padding:84px 0}.tg-enquire .container{grid-template-columns:1fr;gap:40px}.tg-enquire h2{font-size:38px}}
 @media (max-width:600px){.tg-form{grid-template-columns:1fr}.tg-enquire h2{font-size:33px}}
+
+/* Consent banner */
+.tg-consent{position:fixed;left:24px;bottom:24px;z-index:9999;max-width:420px;background:var(--dark-green,#0B2618);color:#F3EFE4;border-radius:16px;padding:22px 24px;font-family:'Montserrat',system-ui,sans-serif;transform:translateY(16px);opacity:0;transition:transform .32s cubic-bezier(.23,1,.32,1),opacity .32s cubic-bezier(.23,1,.32,1)}
+.tg-consent.tg-show{transform:none;opacity:1}
+.tg-consent[hidden]{display:none}
+.tg-consent h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;line-height:1.15;color:#fff;margin:0 0 8px}
+.tg-consent p{font-size:15px;line-height:1.55;margin:0 0 18px;color:#E4ECE7}
+.tg-consent-actions{display:flex;gap:12px;flex-wrap:wrap}
+.tg-consent button{font:inherit;font-size:15px;font-weight:600;border-radius:999px;padding:11px 22px;cursor:pointer;border:0;transition:transform .16s cubic-bezier(.23,1,.32,1),background-color .16s}
+.tg-consent button:active{transform:scale(.97)}
+.tg-consent .tg-accept{background:#8A6330;color:#fff}
+.tg-consent .tg-decline{background:transparent;color:#F3EFE4;box-shadow:inset 0 0 0 1.5px rgba(243,239,228,.5)}
+@media (hover:hover) and (pointer:fine){.tg-consent .tg-accept:hover{background:#9C7238}.tg-consent .tg-decline:hover{box-shadow:inset 0 0 0 1.5px #F3EFE4}}
+.tg-consent button:focus-visible{outline:2px solid #DFBE88;outline-offset:3px}
+.tg-cookie-link{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer}
+@media (max-width:600px){.tg-consent{left:16px;right:16px;bottom:16px;max-width:none;padding:20px}}
+@media (prefers-reduced-motion:reduce){.tg-consent{transition:none}}
 </style>
 </head>
 <body>
@@ -1368,7 +1414,7 @@
       </div>
       <div class="footer-contact">
         <a target="_top" href="mailto:vmi@transglobalfoodtech.com">vmi@transglobalfoodtech.com</a> &nbsp;|&nbsp;
-        <a target="_top" href="tel:+919920444200">+91 99204 44200</a>
+        <a target="_top" href="tel:+919920444200">+91 99204 44200</a> &nbsp;|&nbsp; <button type="button" class="tg-cookie-link" data-tg-consent-open>Cookie settings</button>
       </div>
     </div>
   </footer>
@@ -1424,10 +1470,55 @@
   c.e.forEach(function(id,i){if(vals[i]) p.append('entry.'+id,vals[i]);});
   var b=f.querySelector('button'); b.disabled=true; st.textContent='Sending…';
   fetch('https://docs.google.com/forms/d/e/'+c.id+'/formResponse',{method:'POST',mode:'no-cors',body:p})
-   .then(function(){st.textContent='Thank you, '+name.split(' ')[0]+'. Your enquiry has reached us and we will reply soon.';f.reset();})
+   .then(function(){if(window.gtag){gtag('event','generate_lead',{form_id:'tg-form',enquiry_type:g('tg-type').value,site_env:env});}st.textContent='Thank you, '+name.split(' ')[0]+'. Your enquiry has reached us and we will reply soon.';f.reset();})
    .catch(function(){st.className='tg-status err';st.innerHTML='Something went wrong. Please email <a target="_top" href="mailto:vmi@transglobalfoodtech.com">vmi@transglobalfoodtech.com</a>.';})
    .then(function(){b.disabled=false;});
  });
+})();
+</script>
+
+<div class="tg-consent" id="tg-consent" role="dialog" aria-live="polite" aria-labelledby="tg-consent-title" hidden>
+  <h2 id="tg-consent-title">Help us improve this site</h2>
+  <p>With your permission we use Google Analytics and Microsoft Clarity to understand how visitors use the site. Nothing is collected until you accept.</p>
+  <div class="tg-consent-actions">
+    <button type="button" class="tg-accept" data-tg-consent="granted">Accept</button>
+    <button type="button" class="tg-decline" data-tg-consent="denied">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  var A = window.TG_ANALYTICS || {}, box = document.getElementById('tg-consent');
+  function get(){ try { return localStorage.getItem('tg-consent'); } catch(e) { return null; } }
+  function set(v){ try { localStorage.setItem('tg-consent', v); } catch(e) {} }
+  function show(){ box.hidden = false; requestAnimationFrame(function(){ box.classList.add('tg-show'); }); }
+  function hide(){ box.classList.remove('tg-show'); setTimeout(function(){ box.hidden = true; }, 320); }
+  var clarityLoaded = false;
+  function loadClarity(){
+    if (clarityLoaded || !A.live || !/^[a-z0-9]{6,}$/i.test(A.clarity)) return;
+    clarityLoaded = true;
+    (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,'clarity','script',A.clarity);
+    window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'granted' });
+  }
+  function apply(v){
+    gtag('consent', 'update', { analytics_storage: v === 'granted' ? 'granted' : 'denied' });
+    if (v === 'granted') loadClarity();
+    else if (window.clarity) window.clarity('consentv2', { ad_Storage: 'denied', analytics_Storage: 'denied' });
+  }
+  var choice = get();
+  if (choice === 'granted') loadClarity();
+  if (choice !== 'granted' && choice !== 'denied') setTimeout(show, 900);
+  document.addEventListener('click', function(e){
+    var t = e.target.closest && e.target.closest('[data-tg-consent],[data-tg-consent-open],a[href]');
+    if (!t) return;
+    if (t.hasAttribute('data-tg-consent')) { var v = t.getAttribute('data-tg-consent'); set(v); apply(v); hide(); return; }
+    if (t.hasAttribute('data-tg-consent-open')) { show(); return; }
+    var href = t.getAttribute('href') || '';
+    if (/^mailto:/i.test(href)) gtag('event', 'email_click', { link_url: href, email: href.replace(/^mailto:/i, '').split('?')[0] });
+    else if (/^tel:/i.test(href)) gtag('event', 'phone_click', { link_url: href });
+    else if (/osoeazy\./i.test(t.hostname || '')) gtag('event', 'osoeazy_click', { link_url: t.href, outbound: true });
+  }, true);
 })();
 </script>
 </body></html>
