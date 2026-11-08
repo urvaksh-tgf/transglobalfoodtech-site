@@ -1,0 +1,27 @@
+name: Fetch site photos from Shopify CDN (one-off)
+on:
+  push:
+    branches: [analytics-consent]
+    paths: ['.github/workflows/fetch-photos.yml']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download originals
+        run: |
+          mkdir -p _src
+          base=https://cdn.shopify.com/s/files/1/0857/5939/4036/files
+          for f in tg-hero tg-story tg-farmer tg-osoeazy tg-fresh tg-fruits tg-spices tg-beverages tg-freezedried tg-nutra tg-wellness tg-cosmetics; do
+            curl -fsSL -o "_src/$f.jpg" "$base/$f.jpg"
+          done
+          ls -la _src
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _src
+          git commit -m "Temporary: original photos for WebP conversion"
+          git push
