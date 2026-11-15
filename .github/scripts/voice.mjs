@@ -73,10 +73,13 @@ for (const tag of Object.keys(cfg.voices)) {
     while (todo.length && batch.length < size && (chars + todo[0].text.length <= 700 || !batch.length)) { chars += todo[0].text.length; batch.push(todo.shift()); }
     const r = await tts(batch.map((l) => l.text).join(SEP), cfg.voices[tag]);
     if (!r) { todo.unshift(...batch); break; }
-    fs.writeFileSync('/tmp/v.wav', r.wav);
-    const segs = cut('/tmp/v.wav', batch);
+    // some models answer with headerless 24 kHz 16-bit mono audio instead of a WAV file
+    if (r.wav.subarray(0, 4).toString('latin1') === 'RIFF') fs.writeFileSync('/tmp/v.wav', r.wav);
+    else { fs.writeFileSync('/tmp/v.pcm', r.wav); const c = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 's16le', '-ar', '24000', '-ac', '1', '-i', '/tmp/v.pcm', '/tmp/v.wav']); if (c.status !== 0) { console.log(`  ${r.model}: audio in an unknown format (${r.wav.length} bytes, starts ${r.wav.subarray(0, 8).toString('hex')})`); MODELS.find((m) => m.id === r.model).dead = true; todo.unshift(...batch); continue; } }
+    let segs = null; try { segs = cut('/tmp/v.wav', batch); } catch (e) { console.log('  cut failed: ' + String(e.message).slice(0, 120)); }
+    if (segs && segs.some(([a, b]) => b - a < 0.3)) segs = null;
     if (!segs) { console.log(`  could not cut a batch of ${batch.length} cleanly; ${batch.length > 1 ? 'retrying those one at a time' : 'skipping'}`); if (batch.length > 1) { todo.unshift(...batch); size = 1; } continue; }
-    batch.forEach((l, i) => { save('/tmp/v.wav', segs[i], l.id); made++; console.log(`ok ${l.id} [${tag}] ${(segs[i][1] - segs[i][0]).toFixed(1)}s for ${l.text.length} chars via ${r.model}`); });
+    batch.forEach((l, i) => { try { save('/tmp/v.wav', segs[i], l.id); } catch (e) { console.log(`  could not save ${l.id}`); return; } made++; console.log(`ok ${l.id} [${tag}] ${(segs[i][1] - segs[i][0]).toFixed(1)}s for ${l.text.length} chars via ${r.model}`); });
     await sleep(7000);
   }
 }
