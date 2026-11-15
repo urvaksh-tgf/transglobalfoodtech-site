@@ -1407,6 +1407,8 @@ html.v3 .tg-form button{border-radius:0}
 html.v3 main #contact a{color:#DFBE88}
 @media (max-width:800px){ html.v3 .ecosystem-grid{grid-template-columns:repeat(2,1fr)} html.v3 .eco-label{font-size:15px;left:12px;right:12px;bottom:12px} }
 
+picture{display:contents}
+
 .tg-switch{position:fixed;left:50%;bottom:14px;translate:-50% 0;z-index:80;display:flex;gap:4px;align-items:center;background:#0B2618;color:#FAF7F0;border-radius:999px;padding:6px;font:600 13px/1 Montserrat,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100vw - 20px)}
 .tg-switch span{padding:0 10px 0 12px;opacity:.7}
 .tg-switch a{color:#FAF7F0;text-decoration:none;padding:9px 13px;border-radius:999px;white-space:nowrap}
@@ -1443,7 +1445,7 @@ html.v3 main #contact a{color:#DFBE88}
   <!-- BIG LOGO INTRO -->
   <section class="tg-intro" id="top">
         <div class="tg-intro-inner">
-      <h1 class="tg-intro-logo"><span class="tg-sr-only">TransGlobal Food Tech</span><div class="tg-intro-sun" aria-hidden="true"></div><picture><source srcset="../../assets/img/tg-logo-intro.avif" type="image/avif"><img class="tg-intro-img" src="../../assets/img/tg-logo-intro.webp" fetchpriority="high" width="520" height="420" alt="Transglobal Food Tech"></picture></h1>
+      <h1 class="tg-intro-logo"><span class="tg-sr-only">TransGlobal Food Tech</span><div class="tg-intro-sun" aria-hidden="true"></div><picture><source srcset="../../assets/img/tg-logo-intro.avif" type="image/avif"><picture><source type="image/avif" srcset="../../assets/img/tg-logo-intro.avif"><img class="tg-intro-img" src="../../assets/img/tg-logo-intro.webp" fetchpriority="high" width="520" height="420" alt="Transglobal Food Tech"></picture></picture></h1>
       <p class="tg-intro-lede">A food, nutrition and wellness company that works directly with farmers in India to make better products for families everywhere.</p>
       <a href="#story" class="btn-gold">Our story</a>
     </div>
@@ -1464,7 +1466,7 @@ html.v3 main #contact a{color:#DFBE88}
         </div>
       </div>
       <div class="tg-land">
-        <img src="../../assets/img/fields-1600.webp" srcset="../../assets/img/fields-900.webp 900w, ../../assets/img/fields-1600.webp 1600w, ../../assets/img/fields-2400.webp 2400w" sizes="max(100vw, 200vh)" width="1600" height="800" alt="Farmland at golden hour, farmers carrying baskets of fresh produce along a path" loading="lazy" decoding="async">
+        <picture><source type="image/avif" srcset="../../assets/img/fields-900.avif 900w, ../../assets/img/fields-1600.avif 1600w, ../../assets/img/fields-2400.avif 2400w" sizes="(max-width:700px) 600px, 100vw"><img src="../../assets/img/fields-1600.webp" srcset="../../assets/img/fields-900.webp 900w, ../../assets/img/fields-1600.webp 1600w, ../../assets/img/fields-2400.webp 2400w" sizes="(max-width:700px) 600px, 100vw" width="1600" height="800" alt="Farmland at golden hour, farmers carrying baskets of fresh produce along a path" loading="lazy" decoding="async"></picture>
         <p class="tg-window-line">From farmers to families.<br>From India to the world.</p>
       </div>
       <div class="tg-land-ring" aria-hidden="true"></div>
@@ -1512,7 +1514,7 @@ html.v3 main #contact a{color:#DFBE88}
           <a href="#what-we-do" class="btn-gold">Learn More →</a>
         </div>
         <div class="framed-image-box">
-          <img src="../../assets/img/story-1200.webp" srcset="../../assets/img/story-700.webp 700w, ../../assets/img/story-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="Fresh Natural Produce and Spices" width="1200" height="900" fetchpriority="low" decoding="async">
+          <picture><source type="image/avif" data-srcset="../../assets/img/story-700.avif 700w, ../../assets/img/story-1200.avif 1200w" sizes="(max-width: 900px) 50vw, 560px"><img data-defer src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../assets/img/story-1200.webp" data-srcset="../../assets/img/story-700.webp 700w, ../../assets/img/story-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 560px" alt="Fresh Natural Produce and Spices" width="1200" height="900" decoding="async"></picture>
           <div class="image-badge">
             Real Ingredients<br>Real People<br>Real Possibilities
           </div>
@@ -1558,7 +1560,7 @@ html.v3 main #contact a{color:#DFBE88}
         <a href="#farmer" class="btn-gold">Our Impact →</a>
       </div>
       <div class="farmer-image">
-        <img src="../../assets/img/farmer-1200.webp" srcset="../../assets/img/farmer-700.webp 700w, ../../assets/img/farmer-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" alt="Lush Farm Terraces" width="1200" height="900" fetchpriority="low" decoding="async">
+        <picture><source type="image/avif" data-srcset="../../assets/img/farmer-700.avif 700w, ../../assets/img/farmer-1200.avif 1200w" sizes="(max-width: 900px) 50vw, 560px"><img data-defer src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../assets/img/farmer-1200.webp" data-srcset="../../assets/img/farmer-700.webp 700w, ../../assets/img/farmer-1200.webp 1200w" sizes="(max-width: 900px) 50vw, 560px" alt="Lush Farm Terraces" width="1200" height="900" decoding="async"></picture>
       </div>
     </div>
   </section>
@@ -1573,35 +1575,35 @@ html.v3 main #contact a{color:#DFBE88}
 
       <div class="ecosystem-grid">
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/fresh-400.webp" alt="Fresh produce on a chopping board" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/fresh-400.avif"><img src="../../assets/img/fresh-400.webp" alt="Fresh produce on a chopping board" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Fresh &amp; Natural Ingredients</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/fruits-400.webp" alt="Fresh fruits" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/fruits-400.avif"><img src="../../assets/img/fruits-400.webp" alt="Fresh fruits" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Fruits &amp; Vegetables</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/spices-400.webp" alt="Whole spices" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/spices-400.avif"><img src="../../assets/img/spices-400.webp" alt="Whole spices" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Spices &amp; Botanicals</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/beverages-400.webp" alt="Fresh juice" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/beverages-400.avif"><img src="../../assets/img/beverages-400.webp" alt="Fresh juice" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Food &amp; Beverages</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/freezedried-400.webp" alt="Strawberries" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/freezedried-400.avif"><img src="../../assets/img/freezedried-400.webp" alt="Strawberries" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Freeze-Dried Foods</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/nutra-400.webp" alt="Chickpeas" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/nutra-400.avif"><img src="../../assets/img/nutra-400.webp" alt="Chickpeas" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Nutraceuticals &amp; Functional Nutrition</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/wellness-400.webp" alt="Herbal tea" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/wellness-400.avif"><img src="../../assets/img/wellness-400.webp" alt="Herbal tea" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Wellness Products</div>
         </div>
         <div class="eco-card">
-          <div class="eco-icon eco-photo"><img src="../../assets/img/cosmetics-400.webp" alt="Natural face mask" width="400" height="400" loading="lazy" decoding="async"></div>
+          <div class="eco-icon eco-photo"><picture><source type="image/avif" srcset="../../assets/img/cosmetics-400.avif"><img src="../../assets/img/cosmetics-400.webp" alt="Natural face mask" width="400" height="400" loading="lazy" decoding="async"></picture></div>
           <div class="eco-label">Natural Cosmetics</div>
         </div>
       </div>
@@ -1612,7 +1614,7 @@ html.v3 main #contact a{color:#DFBE88}
   <!-- BAND: what we work with -->
   <section class="tg-band" aria-label="What we work with">
     <div class="tg-band-row"><div class="tg-band-track"><span class="tg-band-word">Fresh &amp; Natural Ingredients</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Fruits &amp; Vegetables</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Spices &amp; Botanicals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Food &amp; Beverages</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Freeze-Dried Foods</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Nutraceuticals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Wellness Products</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Natural Cosmetics</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg></div><div class="tg-band-track" aria-hidden="true"><span class="tg-band-word">Fresh &amp; Natural Ingredients</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Fruits &amp; Vegetables</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Spices &amp; Botanicals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Food &amp; Beverages</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Freeze-Dried Foods</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Nutraceuticals</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Wellness Products</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg><span class="tg-band-word">Natural Cosmetics</span><svg class="tg-band-leaf" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16zm0 0l9-9" stroke="#C69C5E" stroke-width="1.6"/></svg></div></div>
-    <div class="tg-band-row tg-band-photos" aria-hidden="true"><div class="tg-band-track"><img src="../../assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></div><div class="tg-band-track"><img src="../../assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"><img src="../../assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></div></div>
+    <div class="tg-band-row tg-band-photos" aria-hidden="true"><div class="tg-band-track"><picture><source type="image/avif" srcset="../../assets/img/fresh-400.avif"><img src="../../assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/fruits-400.avif"><img src="../../assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/spices-400.avif"><img src="../../assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/beverages-400.avif"><img src="../../assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/freezedried-400.avif"><img src="../../assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/nutra-400.avif"><img src="../../assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/wellness-400.avif"><img src="../../assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/cosmetics-400.avif"><img src="../../assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture></div><div class="tg-band-track"><picture><source type="image/avif" srcset="../../assets/img/fresh-400.avif"><img src="../../assets/img/fresh-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/fruits-400.avif"><img src="../../assets/img/fruits-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/spices-400.avif"><img src="../../assets/img/spices-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/beverages-400.avif"><img src="../../assets/img/beverages-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/freezedried-400.avif"><img src="../../assets/img/freezedried-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/nutra-400.avif"><img src="../../assets/img/nutra-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/wellness-400.avif"><img src="../../assets/img/wellness-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture><picture><source type="image/avif" srcset="../../assets/img/cosmetics-400.avif"><img src="../../assets/img/cosmetics-400.webp" alt="" width="400" height="400" loading="lazy" decoding="async"></picture></div></div>
   </section>
 
   <!-- OUR BRAND: OSOEAZY -->
@@ -1629,9 +1631,9 @@ html.v3 main #contact a{color:#DFBE88}
       <div class="osoeazy-showcase">
         <div class="osoeazy-brand-box">
           <!-- Official OSOEAZY Logo cut from Osoeazy with Transglobal logo.jpeg -->
-          <img id="osoeazy-cropped-logo" class="osoeazy-logo-img" src="../../assets/img/osoeazy-logo.webp" width="600" height="268" fetchpriority="low" decoding="async" alt="OSOEAZY® Official Logo">
+          <img data-defer id="osoeazy-cropped-logo" class="osoeazy-logo-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../assets/img/osoeazy-logo.webp" width="600" height="268" decoding="async" alt="OSOEAZY® Official Logo">
         </div>
-        <img class="osoeazy-product-img" src="../../assets/img/osoeazy-photo-800.webp" alt="Osoeazy Wellness &amp; Nutrition" width="800" height="800" fetchpriority="low" decoding="async">
+        <picture><source type="image/avif" data-srcset="../../assets/img/osoeazy-photo-800.avif"><img data-defer class="osoeazy-product-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../assets/img/osoeazy-photo-800.webp" alt="Osoeazy Wellness &amp; Nutrition" width="800" height="800" decoding="async"></picture>
       </div>
     </div>
   </section>
@@ -1657,7 +1659,7 @@ html.v3 main #contact a{color:#DFBE88}
       <div class="founders-grid">
         <!-- Visha Michelle Iyer -->
         <div class="founder-card has-photo">
-          <img class="founder-photo" src="../../assets/img/michelle.webp" fetchpriority="low" decoding="async" alt="Visha Michelle Iyer, Co-Founder" width="320" height="400">
+          <img data-defer class="founder-photo" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../assets/img/michelle.webp" decoding="async" alt="Visha Michelle Iyer, Co-Founder" width="320" height="400">
           <div class="founder-info">
             <h3>Visha Michelle Iyer</h3>
             <span class="founder-role">Co-Founder</span>
@@ -1946,6 +1948,18 @@ html.v3 main #contact a{color:#DFBE88}
 
   function start(){ globe(); (window.requestIdleCallback||function(f){setTimeout(f,400)})(function(){ lean(); },{timeout:3000}); }
   if(document.readyState==='complete') start(); else addEventListener('load',start);
+})();
+</script>
+<script>
+/* pictures below the first screens load when they come within reach */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('img[data-defer]'));
+  function load(img){ if(!img.hasAttribute('data-defer')) return; img.removeAttribute('data-defer');
+    var p=img.parentNode; if(p&&p.tagName==='PICTURE') [].forEach.call(p.querySelectorAll('source[data-srcset]'),function(s){ s.srcset=s.getAttribute('data-srcset'); });
+    if(img.getAttribute('data-srcset')) img.srcset=img.getAttribute('data-srcset'); img.src=img.getAttribute('data-src'); }
+  if(!('IntersectionObserver' in window)){ els.forEach(load); return; }
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(!e.isIntersecting) return; io.unobserve(e.target); [].forEach.call(e.target.querySelectorAll('img[data-defer]'),load); }); },{rootMargin:'900px 0px'});
+  var seen=[]; els.forEach(function(img){ var host=img.closest('section')||img.parentNode; if(seen.indexOf(host)<0){ seen.push(host); io.observe(host); } });
 })();
 </script>
 <nav class="tg-switch" aria-label="Preview versions"><span>Preview</span><a href="../1/">1 Enchanted field</a><a href="../2/">2 Storybook</a><a href="../3/" aria-current="page">3 Global house</a></nav>
