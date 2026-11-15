@@ -1443,6 +1443,52 @@ html.v3 .tg-intro-lede{font-size:18px;letter-spacing:.01em}
 @keyframes v3Fade{from{opacity:0}to{opacity:.7}}
 @keyframes v3Line{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @keyframes v3Rise{from{translate:0 26px}to{translate:0 0}}
+
+.mg-launch{position:fixed;right:22px;bottom:22px;z-index:90;width:74px;height:74px;border-radius:50%;border:0;padding:0;background:none;cursor:pointer;transition:transform .2s cubic-bezier(.23,1,.32,1)}
+.mg-launch:active{transform:scale(.95)}
+.mg-launch img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 22%;display:block;border:2px solid #C69C5E;box-shadow:0 0 0 4px #0B2618,0 14px 34px rgba(0,0,0,.5)}
+.mg-launch::before,.mg-launch::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(223,190,136,.7);animation:mgRing 2.8s cubic-bezier(.2,.6,.3,1) infinite;pointer-events:none}
+.mg-launch::after{animation-delay:1.4s}
+.mg-dot{position:absolute;right:2px;bottom:4px;width:14px;height:14px;border-radius:50%;background:#56C271;border:3px solid #0B2618}
+@keyframes mgRing{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.55);opacity:0}}
+.mg-hi{position:fixed;right:106px;bottom:38px;z-index:90;max-width:230px;background:#FAF7F0;color:#0B2618;font:500 14px/1.35 'Montserrat',sans-serif;padding:11px 14px;border-radius:14px 14px 3px 14px;box-shadow:0 12px 30px rgba(0,0,0,.4);opacity:0;transform:translateX(10px) scale(.96);transform-origin:100% 100%;transition:opacity .3s ease,transform .3s cubic-bezier(.23,1,.32,1);pointer-events:none}
+.mg-hi.on{opacity:1;transform:none;pointer-events:auto;cursor:pointer}
+.mg-panel{position:fixed;right:22px;bottom:22px;z-index:95;width:min(390px,calc(100vw - 24px));height:min(600px,calc(100svh - 110px));display:flex;flex-direction:column;background:#0B2618;border:1px solid rgba(198,156,94,.55);box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;transform:translateY(16px) scale(.97);transform-origin:100% 100%;pointer-events:none;transition:opacity .22s ease,transform .26s cubic-bezier(.23,1,.32,1);color:#FAF7F0;font-family:'Montserrat',sans-serif}
+.mg-panel.on{opacity:1;transform:none;pointer-events:auto}
+.mg-open .mg-launch,.mg-open .mg-hi{opacity:0;pointer-events:none}
+.mg-head{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;border-bottom:1px solid rgba(198,156,94,.3);background:linear-gradient(180deg,#123623,#0B2618)}
+.mg-ava{position:relative;width:54px;height:54px;flex:none}
+.mg-ava img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 22%;border:1.5px solid #C69C5E;display:block}
+.mg-ava i{position:absolute;inset:-5px;border-radius:50%;border:2px solid #DFBE88;opacity:0}
+.mg-speaking .mg-ava i{animation:mgTalk .7s ease-in-out infinite}
+.mg-speaking .mg-ava i+i{animation-delay:.35s}
+@keyframes mgTalk{0%{transform:scale(.96);opacity:.9}100%{transform:scale(1.22);opacity:0}}
+.mg-who{flex:1;min-width:0}
+.mg-who b{display:block;font-family:'Cormorant Garamond',sans-serif;font-weight:700;font-size:15px;letter-spacing:.04em;text-transform:uppercase}
+.mg-who span{display:block;font-size:11.5px;color:rgba(250,247,240,.72);margin-top:3px;line-height:1.3}
+.mg-ib{width:36px;height:36px;border:1px solid rgba(198,156,94,.45);background:none;color:#DFBE88;cursor:pointer;display:grid;place-items:center;flex:none;transition:background-color .15s ease,transform .15s ease}
+.mg-ib:active{transform:scale(.94)}
+.mg-ib[aria-pressed="true"]{background:#C69C5E;color:#0B2618}
+.mg-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;overscroll-behavior:contain}
+.mg-m{max-width:86%;padding:10px 13px;font-size:14px;line-height:1.5;animation:mgIn .28s cubic-bezier(.23,1,.32,1) both}
+.mg-m.a{align-self:flex-start;background:#153E28;border-left:2px solid #C69C5E}
+.mg-m.u{align-self:flex-end;background:#C69C5E;color:#0B2618;font-weight:600}
+.mg-m a{color:#F0CB80}
+.mg-m.t span{display:inline-block;width:6px;height:6px;border-radius:50%;background:#DFBE88;margin-right:4px;animation:mgDots 1s ease-in-out infinite}
+.mg-m.t span:nth-child(2){animation-delay:.15s}.mg-m.t span:nth-child(3){animation-delay:.3s}
+@keyframes mgDots{50%{opacity:.25;transform:translateY(-3px)}}
+@keyframes mgIn{from{opacity:0;transform:translateY(8px)}}
+.mg-chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 16px 12px;border-top:1px solid rgba(198,156,94,.18)}
+.mg-chips button{font:600 11.5px/1 'Montserrat',sans-serif;letter-spacing:.03em;color:#DFBE88;background:none;border:1px solid rgba(198,156,94,.55);padding:8px 11px;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.mg-chips button:hover{background:#C69C5E;color:#0B2618}
+.mg-form{display:flex;gap:8px;padding:12px 14px;border-top:1px solid rgba(198,156,94,.3)}
+.mg-form input{flex:1;min-width:0;background:#0F2E1E;border:1px solid rgba(198,156,94,.4);color:#FAF7F0;font:400 16px/1.2 'Montserrat',sans-serif;padding:10px 12px}
+.mg-form input::placeholder{color:rgba(250,247,240,.6)}
+.mg-form input:focus-visible,.mg-ib:focus-visible,.mg-chips button:focus-visible,.mg-launch:focus-visible{outline:2px solid #DFBE88;outline-offset:2px}
+.mg-form button{background:#C69C5E;color:#0B2618;border:0;font:700 12px/1 'Montserrat',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:0 16px;cursor:pointer}
+.mg-note{font-size:10.5px;color:rgba(250,247,240,.6);padding:0 16px 10px;line-height:1.35}
+@media (max-width:560px){.mg-launch{right:14px;bottom:76px;width:62px;height:62px}.mg-hi{right:86px;bottom:86px;max-width:190px;font-size:13px}.mg-panel{right:12px;bottom:12px;height:min(620px,calc(100svh - 24px))}}
+@media (prefers-reduced-motion:reduce){.mg-launch::before,.mg-launch::after{animation:none;opacity:0}}
 html.tg-dive .tg-journey{height:250svh!important}
 html.tg-dive .tg-land-ring{border-width:1.5px;box-shadow:0 0 30px 4px rgba(243,217,164,.35),inset 0 0 30px 4px rgba(243,217,164,.2)}
 
@@ -1992,6 +2038,54 @@ picture{display:contents}
   if(document.readyState==='complete') start(); else addEventListener('load',start);
 })();
 </script>
+<script>(function(){
+  var PHOTO='../../../../assets/img/michelle.webp', SS=window.speechSynthesis, voiceOn=false, open=false, tok=0;
+  var KB=[
+   {k:/what.*(do|is)|about|company|transglobal|who are you|tell me/i,a:"Transglobal Food Tech is a food, nutrition and wellness holding company. We connect farmers, natural ingredients, innovation and consumers. We work directly with farmers, source their produce and create value through innovative food, beverage, nutraceutical and natural cosmetic products.",go:'story',cta:'Read our story'},
+   {k:/farmer|sourc|farm|wast|impact|village|rural/i,a:"We believe farmers should be an integral part of the value chain. We work directly with farmers and source their produce, helping create sustainable opportunities for them. Our aim is to reduce agricultural wastage, increase value from their produce and connect local farms to national and international markets.",go:'farmer',cta:'See our impact'},
+   {k:/product|categor|make|sell|range|freeze|dried|spice|nutra|cosmetic|beverage|ingredient|fruit|vegetable|wellness/i,a:"We operate across the entire food and wellness value chain: fresh and natural ingredients, fruits and vegetables, spices and botanicals, food and beverages, freeze-dried foods, nutraceuticals and functional nutrition, wellness products and natural cosmetics.",go:'what-we-do',cta:'See what we do'},
+   {k:/oso|brand|consumer|shop|buy/i,a:"OSOEAZY is our first consumer brand. It brings together food, beverages, functional nutrition, nutraceuticals, wellness and innovative everyday products, making better choices easier. Transglobal is being built as a multi-brand platform, and more brands are being built.",go:'brands',cta:'See our brands'},
+   {k:/vision|mission|purpose|goal|believe|why/i,a:"Our vision is to build a global portfolio of food, nutrition, wellness and natural-product brands that creates value from farm to consumer. Our purpose is to make better nutrition part of everyday life, supporting farmers and creating healthier, more sustainable choices for people everywhere.",go:'story',cta:'Vision, mission, purpose'},
+   {k:/founder|michelle|visha|aditya|team|who (runs|started|founded)|leader/i,a:"Transglobal was founded by Visha Michelle Iyer and Aditya Mahimkar. Michelle has worked with NGOs, farmers and government initiatives and trained in food dehydration. Aditya is a social-impact advocate who has worked extensively with NGOs, youth and farming communities.",go:'founders',cta:'Meet the founders'},
+   {k:/where|address|office|located|location|mumbai|india|visit/i,a:"We are in Mumbai: 401, Jyoti Building, 15th Road, Santacruz (West), Mumbai 400054, India.",go:'contact',cta:'Get in touch'},
+   {k:/partner|distribut|export|import|wholesale|bulk|supply|work with|collab|business|enquir|inquir|contact|email|phone|call|talk|reach|career|job|hiring/i,a:"Happy to take that forward. Tell us a little about what you have in mind using the form and we will reply within two working days. You can also write to vmi@transglobalfoodtech.com.",go:'contact',cta:'Open the enquiry form'}
+  ];
+  var MISS={a:"I do not have that answer here yet. Leave a note in the form and the team will reply within two working days, or write to vmi@transglobalfoodtech.com.",go:'contact',cta:'Open the enquiry form'};
+  var CHIPS=['What does Transglobal do?','How do you work with farmers?','Tell me about OSOEAZY','Start a partnership'];
+  function el(t,c,h){ var e=document.createElement(t); if(c) e.className=c; if(h!=null) e.innerHTML=h; return e; }
+  var launch=el('button','mg-launch','<img src="'+PHOTO+'" alt="" width="74" height="74"><span class="mg-dot"></span>'); launch.type='button'; launch.setAttribute('aria-label','Ask Michelle, the Transglobal guide');
+  var hi=el('div','mg-hi','Hi, I am Michelle. Ask me anything about Transglobal.');
+  var panel=el('div','mg-panel'); panel.setAttribute('role','dialog'); panel.setAttribute('aria-label','Ask Michelle'); panel.setAttribute('aria-hidden','true');
+  panel.innerHTML='<div class="mg-head"><div class="mg-ava"><img src="'+PHOTO+'" alt="" width="54" height="54"><i></i><i></i></div><div class="mg-who"><b>Michelle</b><span>Co-Founder &middot; automated guide</span></div>'
+   +'<button type="button" class="mg-ib mg-voice" aria-pressed="false" aria-label="Turn voice on"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8.5a5 5 0 010 7M18.5 6a8.5 8.5 0 010 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>'
+   +'<button type="button" class="mg-ib mg-x" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
+   +'<div class="mg-log" aria-live="polite"></div><div class="mg-chips"></div><p class="mg-note">Automated answers taken from this website, not a live chat.</p>'
+   +'<form class="mg-form"><input type="text" name="q" autocomplete="off" placeholder="Type a question" aria-label="Type a question"><button type="submit">Ask</button></form>';
+  document.body.appendChild(launch); document.body.appendChild(hi); document.body.appendChild(panel);
+  var log=panel.querySelector('.mg-log'), chips=panel.querySelector('.mg-chips'), form=panel.querySelector('form'), inp=form.querySelector('input'), vb=panel.querySelector('.mg-voice');
+  CHIPS.forEach(function(c){ var b=el('button','',c); b.type='button'; b.addEventListener('click',function(){ ask(c); }); chips.appendChild(b); });
+  function voice(){ var v=SS.getVoices(), pick=function(re){ for(var i=0;i<v.length;i++) if(re.test(v[i].lang+' '+v[i].name)) return v[i]; return null; };
+    return pick(/en[-_]IN.*(female|heera|neerja|veena|priya)/i)||pick(/en[-_]IN/i)||pick(/en[-_]GB.*(female|sonia|libby|serena|kate)/i)||pick(/en[-_]GB/i)||pick(/^en/i); }
+  function speak(t){ if(!voiceOn||!SS) return; SS.cancel(); var u=new SpeechSynthesisUtterance(t), v=voice(); if(v){ u.voice=v; u.lang=v.lang; } u.rate=.96;
+    u.onstart=function(){ panel.classList.add('mg-speaking'); }; u.onend=u.onerror=function(){ panel.classList.remove('mg-speaking'); }; SS.speak(u); }
+  function add(cls,html){ var m=el('div','mg-m '+cls,html); log.appendChild(m); log.scrollTop=log.scrollHeight; return m; }
+  function answer(r){ var my=++tok, t=add('a t','<span></span><span></span><span></span>'); panel.classList.add('mg-speaking');
+    setTimeout(function(){ if(my!==tok){ t.remove(); return; } t.className='mg-m a'; t.textContent=''; var words=r.a.split(' '), i=0; speak(r.a);
+      (function type(){ if(my!==tok) return; t.textContent+=(i?' ':'')+words[i++]; log.scrollTop=log.scrollHeight;
+        if(i<words.length) setTimeout(type,34); else { if(!voiceOn) panel.classList.remove('mg-speaking'); if(r.go){ var a=el('a','',r.cta+' \u2192'); a.href='#'+r.go; a.style.cssText='display:block;margin-top:8px;font-weight:700;text-decoration:none'; a.addEventListener('click',function(){ if(innerWidth<700) setOpen(false); }); t.appendChild(a); } } })(); },620); }
+  function ask(q){ q=q.trim(); if(!q) return; add('u','').textContent=q; var r=MISS; for(var i=0;i<KB.length;i++) if(KB[i].k.test(q)){ r=KB[i]; break; } if(/partner|distribut|start/i.test(q)) r=KB[KB.length-1]; answer(r); }
+  function setOpen(on){ open=on; panel.classList.toggle('on',on); panel.setAttribute('aria-hidden',on?'false':'true'); document.documentElement.classList.toggle('mg-open',on); hi.classList.remove('on');
+    if(on){ if(!log.children.length) answer({a:"Hi, I am Michelle, co-founder of Transglobal Food Tech. This is my automated guide. Ask me about what we do, our farmers, our brands, or how to work with us."}); setTimeout(function(){ if(innerWidth>700) inp.focus(); },250); }
+    else { tok++; if(SS) SS.cancel(); panel.classList.remove('mg-speaking'); launch.focus(); } }
+  launch.addEventListener('click',function(){ setOpen(true); }); hi.addEventListener('click',function(){ setOpen(true); });
+  panel.querySelector('.mg-x').addEventListener('click',function(){ setOpen(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&open) setOpen(false); });
+  form.addEventListener('submit',function(e){ e.preventDefault(); ask(inp.value); inp.value=''; });
+  if(SS&&window.SpeechSynthesisUtterance){ SS.getVoices(); vb.addEventListener('click',function(){ voiceOn=!voiceOn; vb.setAttribute('aria-pressed',voiceOn?'true':'false'); vb.setAttribute('aria-label',voiceOn?'Turn voice off':'Turn voice on'); if(!voiceOn){ SS.cancel(); panel.classList.remove('mg-speaking'); } else speak('Voice is on.'); }); addEventListener('pagehide',function(){ SS.cancel(); }); }
+  else vb.style.display='none';
+  document.querySelectorAll('a[href="#contact"].btn-gold, header a[href="#contact"]');
+  setTimeout(function(){ if(!open) hi.classList.add('on'); },3200); setTimeout(function(){ hi.classList.remove('on'); },11000);
+})();</script>
 <script>
 /* pictures below the first screens load when they come within reach */
 (function(){
