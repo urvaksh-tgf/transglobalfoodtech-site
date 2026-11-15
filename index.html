@@ -1790,7 +1790,7 @@ html.tg-dive .tg-land-ring{display:block;position:absolute;left:50%;top:50%;widt
     var stage=sec.querySelector('.tg-journey-stage'), box=sec.querySelector('.tg-globe-box'), land=sec.querySelector('.tg-land'), img=land.querySelector('img'), ring=sec.querySelector('.tg-land-ring'), line=land.querySelector('.tg-window-line'), text=sec.querySelector('.hero-grid>div'), raf=0;
     function cl(v){ return v<0?0:v>1?1:v; }
     function upd(){ raf=0; var r=sec.getBoundingClientRect(), vh=innerHeight, W=stage.clientWidth;
-      if(r.top<vh*1.5&&img.loading==='lazy') img.loading='eager';
+      if(r.top<vh*1.5&&img.loading==='lazy'&&document.readyState==='complete') img.loading='eager';
       if(r.bottom<-50||r.top>vh+50) return;
       var p=cl(-r.top/Math.max(1,r.height-vh)), k=cl(p/.62), e=k<.5?4*k*k*k:1-Math.pow(-2*k+2,3)/2, c=Math.min(1,e*1.6);
       var to=1-cl(p/.16); text.style.opacity=to; text.style.transform='translateY('+(-p*180).toFixed(1)+'px)'; text.style.visibility=to<=0?'hidden':'';
@@ -1800,7 +1800,7 @@ html.tg-dive .tg-land-ring{display:block;position:absolute;left:50%;top:50%;widt
       ring.style.width=ring.style.height=(rad*2).toFixed(1)+'px'; ring.style.opacity=q>0&&q<1?Math.min(1,(1-q)*3):0;
       var l=cl((p-.8)/.12); line.style.opacity=l; line.style.transform='translateY('+((1-l)*40).toFixed(1)+'px)';
     }
-    addEventListener('scroll',function(){ if(!raf) raf=requestAnimationFrame(upd); },{passive:true}); addEventListener('resize',upd); upd();
+    addEventListener('scroll',function(){ if(!raf) raf=requestAnimationFrame(upd); },{passive:true}); addEventListener('resize',upd); addEventListener('load',upd); upd();
   })();
 
   /* 2. fairy dust: a few motes adrift over the page, and sparks that follow the pointer */
