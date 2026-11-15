@@ -1,0 +1,260 @@
+{
+ "rev": 1,
+ "voices": {
+  "story": {
+   "voice": "Sulafat",
+   "style": "a warm, unhurried storyteller reading a gentle fable aloud, soft and clear"
+  },
+  "guide": {
+   "voice": "Aoede",
+   "style": "a friendly, confident young founder speaking naturally to a visitor, bright and welcoming"
+  }
+ },
+ "lines": [
+  {
+   "id": "5f0cdc3a",
+   "tag": "guide",
+   "text": "Hi, I am Michelle, co-founder of Transglobal Food Tech. This is my automated guide. Ask me about what we do, our farmers, our brands, or how to work with us."
+  },
+  {
+   "id": "3b60d331",
+   "tag": "guide",
+   "text": "Transglobal Food Tech is a food, nutrition and wellness holding company. We connect farmers, natural ingredients, innovation and consumers. We work directly with farmers, source their produce and create value through innovative food, beverage, nutraceutical and natural cosmetic products."
+  },
+  {
+   "id": "27a0d1c4",
+   "tag": "guide",
+   "text": "We believe farmers should be an integral part of the value chain. We work directly with farmers and source their produce, helping create sustainable opportunities for them. Our aim is to reduce agricultural wastage, increase value from their produce and connect local farms to national and international markets."
+  },
+  {
+   "id": "abd56abc",
+   "tag": "guide",
+   "text": "We operate across the entire food and wellness value chain: fresh and natural ingredients, fruits and vegetables, spices and botanicals, food and beverages, freeze-dried foods, nutraceuticals and functional nutrition, wellness products and natural cosmetics."
+  },
+  {
+   "id": "345b0ede",
+   "tag": "guide",
+   "text": "OSOEAZY is our first consumer brand. It brings together food, beverages, functional nutrition, nutraceuticals, wellness and innovative everyday products, making better choices easier. Transglobal is being built as a multi-brand platform, and more brands are being built."
+  },
+  {
+   "id": "e8df7a49",
+   "tag": "guide",
+   "text": "Our vision is to build a global portfolio of food, nutrition, wellness and natural-product brands that creates value from farm to consumer. Our purpose is to make better nutrition part of everyday life, supporting farmers and creating healthier, more sustainable choices for people everywhere."
+  },
+  {
+   "id": "c274441e",
+   "tag": "guide",
+   "text": "Transglobal was founded by Visha Michelle Iyer and Aditya Mahimkar. Michelle has worked with NGOs, farmers and government initiatives and trained in food dehydration. Aditya is a social-impact advocate who has worked extensively with NGOs, youth and farming communities."
+  },
+  {
+   "id": "9f479d21",
+   "tag": "guide",
+   "text": "We are in Mumbai: 401, Jyoti Building, 15th Road, Santacruz (West), Mumbai 400054, India."
+  },
+  {
+   "id": "f9e81e95",
+   "tag": "guide",
+   "text": "Happy to take that forward. Tell us a little about what you have in mind using the form and we will reply within two working days. You can also write to vmi@transglobalfoodtech.com."
+  },
+  {
+   "id": "962448e6",
+   "tag": "guide",
+   "text": "I do not have that answer here yet. Leave a note in the form and the team will reply within two working days, or write to vmi@transglobalfoodtech.com."
+  },
+  {
+   "id": "7b98a389",
+   "tag": "story",
+   "text": "Once upon a time, on a farm in India…"
+  },
+  {
+   "id": "f8dc22af",
+   "tag": "story",
+   "text": "A Healthier Tomorrow Grows Today."
+  },
+  {
+   "id": "27630590",
+   "tag": "story",
+   "text": "Building brands. Supporting farmers. Creating better products for a healthier world."
+  },
+  {
+   "id": "ba5ec145",
+   "tag": "story",
+   "text": "There was a farmer whose fields gave more than her village could ever eat."
+  },
+  {
+   "id": "239663b6",
+   "tag": "story",
+   "text": "But the road to market was long, and each season good food was lost along the way."
+  },
+  {
+   "id": "c22b1f8b",
+   "tag": "story",
+   "text": "So a small company made a promise: nothing good should go to waste. Fruits were dried to keep their goodness. Spices were blended and leaves were brewed."
+  },
+  {
+   "id": "5ecafe25",
+   "tag": "story",
+   "text": "And the harvest set sail, from India to the world."
+  },
+  {
+   "id": "b9b050e9",
+   "tag": "story",
+   "text": "Two founders keep that promise still."
+  },
+  {
+   "id": "3db51d68",
+   "tag": "story",
+   "text": "And everyone ate well, ever after."
+  },
+  {
+   "id": "b661d56d",
+   "tag": "story",
+   "text": "Better Food. Stronger Farmers. Healthier Lives."
+  },
+  {
+   "id": "c7f8b6d4",
+   "tag": "story",
+   "text": "By connecting farmers to innovation and innovation to consumers, we can create better value for everyone."
+  },
+  {
+   "id": "2dfefe83",
+   "tag": "story",
+   "text": "TransGlobal Food Tech."
+  },
+  {
+   "id": "643b489d",
+   "tag": "story",
+   "text": "A food, nutrition and wellness company that works directly with farmers in India to make better products for families everywhere."
+  },
+  {
+   "id": "4f6bff83",
+   "tag": "story",
+   "text": "Good Products Begin at the Source."
+  },
+  {
+   "id": "083de156",
+   "tag": "story",
+   "text": "Transglobal Food Tech is a food, nutrition and wellness holding company that connects farmers, natural ingredients, innovation and consumers."
+  },
+  {
+   "id": "a45645e0",
+   "tag": "story",
+   "text": "We work directly with farmers, source their produce and create value through innovative food, beverage, nutraceutical and natural cosmetic products."
+  },
+  {
+   "id": "81f9bc90",
+   "tag": "story",
+   "text": "Our Vision."
+  },
+  {
+   "id": "312a90ad",
+   "tag": "story",
+   "text": "To build a global portfolio of food, nutrition, wellness and natural-product brands that creates value from farm to consumer."
+  },
+  {
+   "id": "7c590fb6",
+   "tag": "story",
+   "text": "Our Mission."
+  },
+  {
+   "id": "58d8e2bc",
+   "tag": "story",
+   "text": "To source quality ingredients, work closely with farmers and develop innovative products that bring together nature, nutrition, science, technology and convenience."
+  },
+  {
+   "id": "de9ae97e",
+   "tag": "story",
+   "text": "Our Purpose."
+  },
+  {
+   "id": "d0d9921b",
+   "tag": "story",
+   "text": "To make better nutrition part of everyday life — supporting farmers and creating healthier, more sustainable choices for people everywhere."
+  },
+  {
+   "id": "5fecb9b2",
+   "tag": "story",
+   "text": "From Farm to Future."
+  },
+  {
+   "id": "14d0972b",
+   "tag": "story",
+   "text": "We believe farmers should be an integral part of the value chain. We work directly with farmers and source their produce, helping create sustainable opportunities for them."
+  },
+  {
+   "id": "284f5074",
+   "tag": "story",
+   "text": "Our aim is to reduce agricultural wastage, increase value from their produce and connect local farms to national and international markets."
+  },
+  {
+   "id": "99c7997d",
+   "tag": "story",
+   "text": "A Complete Food & Wellness Ecosystem."
+  },
+  {
+   "id": "d2075ec4",
+   "tag": "story",
+   "text": "From ingredients to finished products, we operate across the entire food and wellness value chain."
+  },
+  {
+   "id": "c17ad5e0",
+   "tag": "story",
+   "text": "Our first consumer brand, OSOEAZY brings together food, beverages, functional nutrition, nutraceuticals, wellness and innovative everyday products — making better choices easier."
+  },
+  {
+   "id": "5e855293",
+   "tag": "story",
+   "text": "A Multi-Brand Platform."
+  },
+  {
+   "id": "941ac553",
+   "tag": "story",
+   "text": "OSOEAZY is just the beginning. Transglobal Food Tech is being built as a multi-brand platform, developing and building new brands across food, nutrition, wellness and natural products."
+  },
+  {
+   "id": "83bffe0d",
+   "tag": "story",
+   "text": "OSOEAZY is the first.More brands are being built."
+  },
+  {
+   "id": "fe92cf77",
+   "tag": "story",
+   "text": "Entrepreneurship. Impact. A Shared Vision."
+  },
+  {
+   "id": "d19ae85b",
+   "tag": "story",
+   "text": "Visha Michelle Iyer."
+  },
+  {
+   "id": "252be5a5",
+   "tag": "story",
+   "text": "Entrepreneur and creative thinker who has worked with NGOs, farmers and government initiatives. Her interest in food processing grew from seeing farmers lose significant value when fresh produce was discarded because it could not reach markets economically. Her training in food dehydration led her to explore ways of preserving agricultural produce, reducing wastage and creating greater value from what farmers grow."
+  },
+  {
+   "id": "dd8d8452",
+   "tag": "story",
+   "text": "Aditya Mahimkar."
+  },
+  {
+   "id": "21d0d942",
+   "tag": "story",
+   "text": "Entrepreneur and social-impact advocate who has worked extensively with NGOs, youth and farming communities. Through his own NGO and various initiatives, he has worked with people across communities, with a particular focus on creating opportunities and improving livelihoods."
+  },
+  {
+   "id": "724445b6",
+   "tag": "story",
+   "text": "Let's grow something together."
+  },
+  {
+   "id": "dc53b6cb",
+   "tag": "story",
+   "text": "Partnerships, distribution, sourcing from farmers or questions about OSOEAZY. Tell us a little about what you have in mind and we will reply within two working days."
+  },
+  {
+   "id": "81acb491",
+   "tag": "story",
+   "text": "Prefer email? Write to vmi@transglobalfoodtech.com."
+  }
+ ]
+}

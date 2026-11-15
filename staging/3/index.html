@@ -2039,7 +2039,10 @@ picture{display:contents}
 })();
 </script>
 <script>(function(){
-  var PHOTO='../../../../assets/img/michelle.webp', SS=window.speechSynthesis, voiceOn=false, open=false, tok=0;
+  var PHOTO='../../../../assets/img/michelle.webp', SS=window.speechSynthesis, voiceOn=false, open=false, tok=0, AUD='../../../../assets/audio/', man=null, clip=null, HELLO="Hi, I am Michelle, co-founder of Transglobal Food Tech. This is my automated guide. Ask me about what we do, our farmers, our brands, or how to work with us.";
+  function hid(s){ var h=2166136261; for(var i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return ('0000000'+(h>>>0).toString(16)).slice(-8); }
+  function loadMan(){ if(man) return; man={}; fetch(AUD+'manifest.json').then(function(r){ return r.ok?r.json():[]; }).then(function(a){ a.forEach(function(x){ man[x]=1; }); }).catch(function(){}); }
+  function hush(){ if(clip){ try{ clip.onended=clip.onerror=null; clip.pause(); }catch(e){} clip=null; } if(SS) SS.cancel(); }
   var KB=[
    {k:/what.*(do|is)|about|company|transglobal|who are you|tell me/i,a:"Transglobal Food Tech is a food, nutrition and wellness holding company. We connect farmers, natural ingredients, innovation and consumers. We work directly with farmers, source their produce and create value through innovative food, beverage, nutraceutical and natural cosmetic products.",go:'story',cta:'Read our story'},
    {k:/farmer|sourc|farm|wast|impact|village|rural/i,a:"We believe farmers should be an integral part of the value chain. We work directly with farmers and source their produce, helping create sustainable opportunities for them. Our aim is to reduce agricultural wastage, increase value from their produce and connect local farms to national and international markets.",go:'farmer',cta:'See our impact'},
@@ -2066,23 +2069,27 @@ picture{display:contents}
   CHIPS.forEach(function(c){ var b=el('button','',c); b.type='button'; b.addEventListener('click',function(){ ask(c); }); chips.appendChild(b); });
   function voice(){ var v=SS.getVoices(), pick=function(re){ for(var i=0;i<v.length;i++) if(re.test(v[i].lang+' '+v[i].name)) return v[i]; return null; };
     return pick(/en[-_]IN.*(female|heera|neerja|veena|priya)/i)||pick(/en[-_]IN/i)||pick(/en[-_]GB.*(female|sonia|libby|serena|kate)/i)||pick(/en[-_]GB/i)||pick(/^en/i); }
-  function speak(t){ if(!voiceOn||!SS) return; SS.cancel(); var u=new SpeechSynthesisUtterance(t), v=voice(); if(v){ u.voice=v; u.lang=v.lang; } u.rate=.96;
+  function device(t){ if(!SS||!window.SpeechSynthesisUtterance){ panel.classList.remove('mg-speaking'); return; } var u=new SpeechSynthesisUtterance(t), v=voice(); if(v){ u.voice=v; u.lang=v.lang; } u.rate=.96;
     u.onstart=function(){ panel.classList.add('mg-speaking'); }; u.onend=u.onerror=function(){ panel.classList.remove('mg-speaking'); }; SS.speak(u); }
+  function speak(t){ if(!voiceOn) return; hush(); var id=hid('guide|g1|'+t);
+    if(man&&man[id]){ var a=new Audio(AUD+id+'.mp3'); clip=a; panel.classList.add('mg-speaking'); a.onended=function(){ panel.classList.remove('mg-speaking'); }; a.onerror=function(){ device(t); }; var pr=a.play(); if(pr&&pr.catch) pr.catch(function(){ device(t); }); }
+    else device(t); }
   function add(cls,html){ var m=el('div','mg-m '+cls,html); log.appendChild(m); log.scrollTop=log.scrollHeight; return m; }
   function answer(r){ var my=++tok, t=add('a t','<span></span><span></span><span></span>'); panel.classList.add('mg-speaking');
-    setTimeout(function(){ if(my!==tok){ t.remove(); return; } t.className='mg-m a'; t.textContent=''; var words=r.a.split(' '), i=0; speak(r.a);
+    setTimeout(function(){ if(my!==tok){ t.remove(); return; } t.className='mg-m a'; t.textContent=''; t.__t=r.a; var words=r.a.split(' '), i=0; speak(r.a);
       (function type(){ if(my!==tok) return; t.textContent+=(i?' ':'')+words[i++]; log.scrollTop=log.scrollHeight;
         if(i<words.length) setTimeout(type,34); else { if(!voiceOn) panel.classList.remove('mg-speaking'); if(r.go){ var a=el('a','',r.cta+' \u2192'); a.href='#'+r.go; a.style.cssText='display:block;margin-top:8px;font-weight:700;text-decoration:none'; a.addEventListener('click',function(){ if(innerWidth<700) setOpen(false); }); t.appendChild(a); } } })(); },620); }
   function ask(q){ q=q.trim(); if(!q) return; add('u','').textContent=q; var r=MISS; for(var i=0;i<KB.length;i++) if(KB[i].k.test(q)){ r=KB[i]; break; } if(/partner|distribut|start/i.test(q)) r=KB[KB.length-1]; answer(r); }
   function setOpen(on){ open=on; panel.classList.toggle('on',on); panel.setAttribute('aria-hidden',on?'false':'true'); document.documentElement.classList.toggle('mg-open',on); hi.classList.remove('on');
-    if(on){ if(!log.children.length) answer({a:"Hi, I am Michelle, co-founder of Transglobal Food Tech. This is my automated guide. Ask me about what we do, our farmers, our brands, or how to work with us."}); setTimeout(function(){ if(innerWidth>700) inp.focus(); },250); }
-    else { tok++; if(SS) SS.cancel(); panel.classList.remove('mg-speaking'); launch.focus(); } }
+    if(on){ if(!log.children.length) answer({a:HELLO}); setTimeout(function(){ if(innerWidth>700) inp.focus(); },250); }
+    else { tok++; hush(); panel.classList.remove('mg-speaking'); launch.focus(); } }
   launch.addEventListener('click',function(){ setOpen(true); }); hi.addEventListener('click',function(){ setOpen(true); });
   panel.querySelector('.mg-x').addEventListener('click',function(){ setOpen(false); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&open) setOpen(false); });
   form.addEventListener('submit',function(e){ e.preventDefault(); ask(inp.value); inp.value=''; });
-  if(SS&&window.SpeechSynthesisUtterance){ SS.getVoices(); vb.addEventListener('click',function(){ voiceOn=!voiceOn; vb.setAttribute('aria-pressed',voiceOn?'true':'false'); vb.setAttribute('aria-label',voiceOn?'Turn voice off':'Turn voice on'); if(!voiceOn){ SS.cancel(); panel.classList.remove('mg-speaking'); } else speak('Voice is on.'); }); addEventListener('pagehide',function(){ SS.cancel(); }); }
-  else vb.style.display='none';
+  if(SS) SS.getVoices(); addEventListener('load',loadMan); addEventListener('pagehide',hush);
+  vb.addEventListener('click',function(){ voiceOn=!voiceOn; vb.setAttribute('aria-pressed',voiceOn?'true':'false'); vb.setAttribute('aria-label',voiceOn?'Turn voice off':'Turn voice on'); if(!voiceOn){ hush(); panel.classList.remove('mg-speaking'); } else { var l=log.querySelectorAll('.mg-m.a'); if(l.length&&l[l.length-1].__t) speak(l[l.length-1].__t); } });
+  window.__voiceLines=function(){ return [HELLO].concat(KB.map(function(k){ return k.a; }),[MISS.a]).map(function(t){ return {id:hid('guide|g1|'+t),tag:'guide',text:t}; }); };
   document.querySelectorAll('a[href="#contact"].btn-gold, header a[href="#contact"]');
   setTimeout(function(){ if(!open) hi.classList.add('on'); },3200); setTimeout(function(){ hi.classList.remove('on'); },11000);
 })();</script>
