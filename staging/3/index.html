@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en" class="v3"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="EFiBTJzi8Wwt1bRlg1ZehR-D6aKbQuU1BrXmGU25MB4">
@@ -1360,6 +1360,52 @@ html.tg-dive .tg-land-ring{display:block;position:absolute;left:50%;top:50%;widt
 .pillar-bar{padding:34px 0 64px}
 .pillar-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(20px,2vw,28px);color:#DFBE88}
 .pillar-icon{display:none}
+
+/* ---- Version 3 look: dark, sharp, corporate ---- */
+html.v3 body{background:#07160F!important}
+html.v3 header{background:#07160F;border-bottom:1px solid rgba(198,156,94,.28);box-shadow:none}
+html.v3 .brand-logo{background:#FAF7F0;padding:3px 10px}
+html.v3 .nav-links a{color:#EDE8DA;font-weight:500}
+html.v3 .tg-intro .tg-wave path:first-child{fill:#0B2618}
+html.v3 #story,html.v3 #founders,html.v3 .tg-enquire{background:#07160F}
+html.v3 .farmer-section{background:#0B2618}
+html.v3 main :is(#story,#farmer,#founders,#contact) :is(h2,h3,h4,p,span,label,strong,li){color:#EDE8DA}
+html.v3 main :is(#story,#farmer,#founders,#contact) .body-copy,html.v3 .vmp-card p,html.v3 .founder-card p{color:rgba(237,232,218,.8)}
+html.v3 .section-heading,html.v3 .tg-enquire h2,html.v3 .belief-banner h2{font-family:Montserrat,system-ui,sans-serif;font-weight:700;letter-spacing:-.035em;font-size:clamp(32px,4.3vw,62px);line-height:1.03;color:#FAF7F0}
+html.v3 .section-heading::before{content:'';display:block;width:64px;height:3px;background:#C69C5E;margin-bottom:26px}
+html.v3 .center-header .section-heading::before{margin-inline:auto}
+html.v3 .hero .hero-title,html.v3 .tg-window-line{font-family:Montserrat,system-ui,sans-serif;font-weight:700;letter-spacing:-.04em}
+html.v3 .btn-gold,html.v3 .hero .btn-gold{border-radius:0;background:transparent;color:#DFBE88;box-shadow:inset 0 0 0 1.5px #C69C5E;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:600;padding:17px 30px;transition:background-color 200ms ease,color 200ms ease,transform 160ms cubic-bezier(.23,1,.32,1)}
+html.v3 .btn-gold:hover{background:#C69C5E;color:#07160F}
+html.v3 .tg-intro .btn-gold{color:#8A6330}
+html.v3 .framed-image-box,html.v3 .farmer-image{border-radius:0;border:0;box-shadow:none;outline:1px solid rgba(198,156,94,.6);outline-offset:14px}
+html.v3 .framed-image-box img,html.v3 .farmer-image img{border-radius:0;filter:saturate(.92) contrast(1.08)}
+html.v3 .image-badge{background:#C69C5E;border-radius:0;font-family:Montserrat,system-ui,sans-serif;font-style:normal;font-weight:700;font-size:14px;line-height:1.5;box-shadow:none}
+html.v3 main #story .image-badge{color:#07160F}
+html.v3 .vmp-card{background:none;border:0;border-top:1px solid rgba(198,156,94,.45);border-radius:0;box-shadow:none;padding:26px 0 0}
+html.v3 main #story .vmp-card h3{color:#DFBE88;font-family:Montserrat,system-ui,sans-serif;font-size:20px;font-weight:700;letter-spacing:-.01em}
+html.v3 .ecosystem-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;max-width:none}
+html.v3 .eco-card{position:relative;padding:0;aspect-ratio:3/4;overflow:hidden;background:#07160F}
+html.v3 .eco-icon.eco-photo{width:100%;height:100%;border-radius:0;margin:0}
+html.v3 .eco-icon.eco-photo::before{display:none}
+html.v3 .eco-photo img{border-radius:0;filter:brightness(.62) saturate(.95);transition:filter 400ms ease,transform 700ms cubic-bezier(.23,1,.32,1)}
+html.v3 .eco-label{position:absolute;left:18px;right:18px;bottom:18px;text-align:left;z-index:2;font-family:Montserrat,system-ui,sans-serif;font-weight:700;font-size:18px;line-height:1.2;color:#FAF7F0}
+@media (hover:hover) and (pointer:fine){ html.v3 .eco-card:hover .eco-photo img{filter:brightness(.95);transform:scale(1.06)} }
+html.v3 .tg-band{background:#07160F;border-block:1px solid rgba(198,156,94,.3)}
+html.v3 .tg-band-word{font-family:Montserrat,system-ui,sans-serif;font-weight:700;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.2px #C69C5E}
+html.v3 .tg-band-leaf{fill:#C69C5E}
+html.v3 .tg-band-photos img{border-radius:0}
+html.v3 .multibrand-bar{background:#C69C5E}
+html.v3 .multibrand-bar .section-heading,html.v3 .multibrand-bar .body-copy,html.v3 .multibrand-bar .tg-next{color:#07160F}
+html.v3 .multibrand-bar .section-heading::before{background:#07160F}
+html.v3 .founder-card{background:#0E2A1B;border-radius:0;border:0;border-top:3px solid #C69C5E;box-shadow:none}
+html.v3 .founder-photo{border-radius:0;filter:saturate(.9)}
+html.v3 main #founders .founder-role{color:#DFBE88}
+html.v3 .osoeazy-product-img{border-radius:0}
+html.v3 .tg-form :is(input,select,textarea){background:#0E2A1B;border:1px solid rgba(198,156,94,.4);color:#FAF7F0;border-radius:0}
+html.v3 .tg-form button{border-radius:0}
+html.v3 main #contact a{color:#DFBE88}
+@media (max-width:800px){ html.v3 .ecosystem-grid{grid-template-columns:repeat(2,1fr)} html.v3 .eco-label{font-size:15px;left:12px;right:12px;bottom:12px} }
 
 .tg-switch{position:fixed;left:50%;bottom:14px;translate:-50% 0;z-index:80;display:flex;gap:4px;align-items:center;background:#0B2618;color:#FAF7F0;border-radius:999px;padding:6px;font:600 13px/1 Montserrat,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100vw - 20px)}
 .tg-switch span{padding:0 10px 0 12px;opacity:.7}

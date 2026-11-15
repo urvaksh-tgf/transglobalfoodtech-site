@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en" class="v2"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="EFiBTJzi8Wwt1bRlg1ZehR-D6aKbQuU1BrXmGU25MB4">
@@ -1393,6 +1393,38 @@ body{background:#F6EEDC url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
   .hero.tg-book-title{padding:44px 0 60px}
   .hero.tg-book-title::before{inset:10px}
 }
+
+/* ---- Version 2 look: every page is a page of the book ---- */
+html.v2 .body-copy,html.v2 .hero-sub,html.v2 .vmp-card p,html.v2 .founder-card p,html.v2 .osoeazy-desc,html.v2 .tg-intro-lede,html.v2 .tg-enquire p{font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;line-height:1.5;font-weight:500}
+html.v2 .nav-links a{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:19px;font-weight:600}
+html.v2 .btn-gold{border-radius:3px;background:#0B2618;color:#F6EEDC;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;padding:12px 28px;box-shadow:inset 0 0 0 1px #0B2618,inset 0 0 0 4px #F6EEDC,inset 0 0 0 5px #0B2618}
+html.v2 .tg-book-title .btn-gold{background:#0B2618;color:#F6EEDC}
+html.v2 #story .section-heading,html.v2 #farmer .section-heading,html.v2 #founders .section-heading{text-align:center}
+html.v2 .section-heading::after{content:'';display:block;width:120px;height:9px;margin:18px auto 0;background:radial-gradient(circle,#C69C5E 2.2px,transparent 3px) 0 50%/14px 9px repeat-x}
+html.v2 .story-grid{grid-template-columns:1fr;max-width:780px;margin-inline:auto;gap:44px}
+html.v2 .story-grid .btn-gold{display:table;margin-inline:auto}
+html.v2 .framed-image-box,html.v2 .farmer-image{display:grid;justify-items:center;gap:18px;border:0;background:none;box-shadow:none;overflow:visible;border-radius:0;order:-1}
+html.v2 .framed-image-box img,html.v2 .farmer-image img{width:min(440px,100%);aspect-ratio:4/5;height:auto;object-fit:cover;border-radius:999px 999px 10px 10px;border:5px double #C69C5E;padding:9px;background:#FBF6E8;box-shadow:0 24px 54px rgba(60,40,10,.26);filter:sepia(.3) saturate(1.2) contrast(1.03)}
+html.v2 .image-badge{position:static;background:none;box-shadow:none;border:0;padding:0;font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:23px;text-align:center;color:#8A6330}
+html.v2 .vmp-card{text-align:center;border:0;background:none;box-shadow:none;border-top:3px double #C69C5E;border-radius:0;padding:24px 10px 0}
+html.v2 .vmp-card h3{font-style:italic}
+html.v2 .eco-icon.eco-photo{width:150px;height:190px;border-radius:50%;border:4px double #C69C5E;padding:6px;background:#FBF6E8}
+html.v2 .eco-icon.eco-photo::before{display:none}
+html.v2 .eco-photo img{filter:sepia(.3) saturate(1.2)}
+html.v2 .eco-label{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:21px;font-weight:600}
+html.v2 .pillar-bar{background:#EFE4CB;color:#0B2618}
+html.v2 .pillar-title{color:#0B2618;font-style:italic}
+html.v2 .pillar-icon svg{stroke:#8A6330}
+html.v2 .tg-band{background:#EFE4CB;border-block:3px double #C69C5E}
+html.v2 .tg-band-word{font-style:italic}
+html.v2 .tg-band-photos img{border-radius:999px 999px 8px 8px;filter:sepia(.3) saturate(1.2)}
+html.v2 .founders-grid{gap:40px}
+html.v2 .founder-card{background:none;border:0;box-shadow:none;text-align:center;display:block;padding:0 12px}
+html.v2 .founder-photo{width:190px;height:236px;border-radius:50%;object-fit:cover;border:4px double #C69C5E;padding:6px;background:#FBF6E8;margin:0 auto 20px;display:block;filter:sepia(.25)}
+html.v2 .osoeazy-banner{border-block:3px double #C69C5E}
+html.v2 .osoeazy-product-img{border-radius:999px 999px 10px 10px;filter:sepia(.25) saturate(1.15)}
+html.v2 footer{background:#0B2618}
+@media (max-width:700px){ html.v2 .eco-icon.eco-photo{width:120px;height:152px} html.v2 .body-copy,html.v2 .hero-sub,html.v2 .vmp-card p,html.v2 .founder-card p,html.v2 .osoeazy-desc,html.v2 .tg-intro-lede,html.v2 .tg-enquire p{font-size:20px} }
 
 .tg-switch{position:fixed;left:50%;bottom:14px;translate:-50% 0;z-index:80;display:flex;gap:4px;align-items:center;background:#0B2618;color:#FAF7F0;border-radius:999px;padding:6px;font:600 13px/1 Montserrat,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100vw - 20px)}
 .tg-switch span{padding:0 10px 0 12px;opacity:.7}

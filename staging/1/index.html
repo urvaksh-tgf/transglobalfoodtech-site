@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en" class="v1"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="EFiBTJzi8Wwt1bRlg1ZehR-D6aKbQuU1BrXmGU25MB4">
@@ -1387,6 +1387,29 @@ html.tg-world-on #contact.tg-enquire{border-radius:44px 44px 0 0}
 @keyframes tgGapDrift{from{translate:0 9svh}to{translate:0 -9svh}}
 @media (max-width:700px){ html.tg-world-on .tg-open + section,html.tg-world-on #contact.tg-enquire{border-radius:28px 28px 0 0} html.tg-world-on section:has(+ .tg-open){border-radius:0 0 28px 28px} html.tg-world-on .tg-open + section:has(+ .tg-open){border-radius:28px} html.tg-world-on .tg-gap{min-height:80svh} }
 
+/* ---- Version 1 look: everything floats in the landscape ---- */
+html.v1 header{background:transparent;box-shadow:none;border:0;top:10px}
+html.v1 header .nav-inner{background:#FAF7F0;border-radius:999px;box-shadow:0 10px 40px rgba(11,38,24,.18);max-width:1180px;width:calc(100% - 28px);padding:6px 12px 6px 22px}
+html.v1.tg-world-on main>section:not(.tg-open){width:min(1180px,calc(100% - 36px));margin:0 auto 26px;border-radius:44px!important;overflow:clip}
+html.v1.tg-world-on #contact.tg-enquire{border-radius:44px!important;margin-bottom:64px}
+html.v1.tg-world-on footer{border-radius:44px 44px 0 0}
+html.v1.tg-world-on #what-we-do{background:transparent;box-shadow:none!important;width:auto;border-radius:0!important;overflow:visible;padding-top:60px}
+html.v1.tg-world-on #what-we-do .center-header{background:#FAF7F0;border-radius:36px;padding:34px 30px;max-width:760px;margin-inline:auto;box-shadow:0 30px 90px rgba(11,38,24,.28)}
+html.v1 .eco-icon.eco-photo{width:150px;height:150px;box-shadow:0 0 0 7px #FAF7F0,0 22px 44px rgba(11,38,24,.35)}
+html.v1 .eco-label{display:inline-block;background:#FAF7F0;border-radius:999px;padding:7px 15px;margin-top:18px;box-shadow:0 8px 22px rgba(11,38,24,.2)}
+html.v1 .framed-image-box,html.v1 .farmer-image{overflow:visible;background:none;border:0;box-shadow:none;border-radius:0}
+html.v1 .framed-image-box img,html.v1 .farmer-image img{border-radius:58% 42% 55% 45%/48% 58% 42% 52%}
+html.v1 .founder-card{border-radius:32px}
+html.v1 .tg-band-photos img{border-radius:999px}
+@media (prefers-reduced-motion:no-preference){
+  html.v1 .eco-card:nth-child(odd) .eco-icon{animation:tgBob 6s ease-in-out infinite}
+  html.v1 .eco-card:nth-child(even) .eco-icon{animation:tgBob 7s ease-in-out -3s infinite}
+  html.v1 .framed-image-box img,html.v1 .farmer-image img{animation:tgBlob 12s ease-in-out infinite alternate}
+}
+@keyframes tgBob{0%,100%{translate:0 0}50%{translate:0 -12px}}
+@keyframes tgBlob{to{border-radius:44% 56% 42% 58%/56% 44% 58% 42%}}
+@media (max-width:700px){ html.v1.tg-world-on main>section:not(.tg-open){width:calc(100% - 20px);border-radius:28px!important;margin-bottom:16px} html.v1 .eco-icon.eco-photo{width:118px;height:118px} html.v1 header .nav-inner{width:calc(100% - 16px)} }
+
 .tg-switch{position:fixed;left:50%;bottom:14px;translate:-50% 0;z-index:80;display:flex;gap:4px;align-items:center;background:#0B2618;color:#FAF7F0;border-radius:999px;padding:6px;font:600 13px/1 Montserrat,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100vw - 20px)}
 .tg-switch span{padding:0 10px 0 12px;opacity:.7}
 .tg-switch a{color:#FAF7F0;text-decoration:none;padding:9px 13px;border-radius:999px;white-space:nowrap}
@@ -1517,7 +1540,7 @@ html.tg-world-on #contact.tg-enquire{border-radius:44px 44px 0 0}
   <!-- WHAT WE DO: 8-CATEGORY ECOSYSTEM -->
   <section class="tg-gap tg-open"><p class="tg-gap-word" data-lines>Stronger Farmers</p></section>
 
-  <section id="what-we-do" class="section-padding">
+  <section id="what-we-do" class="section-padding tg-open">
     <div class="container">
       <div class="center-header">
         <h2 class="section-heading" data-lines>A Complete Food &amp; Wellness Ecosystem</h2>
