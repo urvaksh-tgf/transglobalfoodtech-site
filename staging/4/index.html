@@ -3,7 +3,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="EFiBTJzi8Wwt1bRlg1ZehR-D6aKbQuU1BrXmGU25MB4">
-<link rel="preload" as="image" href="../../assets/img/tg-logo-intro.avif" type="image/avif" fetchpriority="high">
 <!-- Analytics: GA4 + Microsoft Clarity. Nothing loads until the visitor clicks Accept. Edit the IDs here only. -->
 <script>
 window.TG_ANALYTICS = {
@@ -1454,6 +1453,38 @@ html.v4 .tg-intro-lede{background:#FFF8E7;border:4px solid var(--ink);border-rad
 @keyframes v4Slam{0%{scale:1.9;rotate:-12deg}60%{scale:.93;rotate:2deg}100%{scale:1;rotate:0deg}}
 @keyframes v4Idle{0%,100%{rotate:0deg;translate:0 0}50%{rotate:-2deg;translate:0 -6px}}
 
+.mk{display:flex;flex-direction:column;align-items:center}
+.mk-em{display:block;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mk-w{display:block;white-space:nowrap;line-height:1}
+html.v4 .tg-intro-logo{animation:none!important;opacity:1!important;transform:none!important;max-width:none}
+
+.mk4{padding:18px 0 26px}
+.mk4 .mk-em{width:clamp(150px,22vw,230px);stroke:#0B3D1E;stroke-width:5;filter:drop-shadow(6px 7px 0 rgba(11,61,30,.9))}
+.mk4 .gl{fill:#1FA24A}
+.mk4 .mr{stroke-width:2.5;opacity:.28}
+.mk4 .lf{fill:#8EDB3F}.mk4 .lv{stroke-width:3}
+.mk4 .sw0{stroke-width:17}.mk4 .sw{stroke:#FF8A1F;stroke-width:9}
+.mk4 .fc circle{fill:#fff;stroke-width:3}.mk4 .fc .pp{fill:#0B3D1E;stroke:none}.mk4 .fc path{stroke-width:4}
+.mk4 .mk-w{font-family:'Cormorant Garamond',sans-serif;font-size:clamp(58px,11.5vw,132px);letter-spacing:.01em;margin-top:-6px;-webkit-text-stroke:.16em #0B3D1E;paint-order:stroke fill;filter:drop-shadow(.06em .07em 0 #0B3D1E)}
+.mk4 .mk-w b{display:inline-block;font-weight:400}
+.mk4 .mk-a{color:#FFF8E7}.mk4 .mk-b{color:#FF8A1F}
+.mk4 .mk-b b:nth-child(2){color:#E63B2E}.mk4 .mk-b b:nth-child(4){color:#8EDB3F}.mk4 .mk-b b:nth-child(6){color:#FFD23F}
+.mk4 .mk-s{font-family:'Cormorant Garamond',sans-serif;font-size:clamp(20px,3vw,34px);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:#E63B2E;border:4px solid #0B3D1E;border-radius:999px;padding:.12em .9em .16em;box-shadow:5px 6px 0 #0B3D1E;rotate:-3deg;margin-top:.1em}
+.mk4 .mk-t{font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#0B3D1E;margin-top:22px}
+@media (max-width:520px){.mk4 .mk-t{font-size:9px;letter-spacing:.04em}}
+@media (prefers-reduced-motion:no-preference){
+.mk4 .mk-em{animation:v4Slam .8s cubic-bezier(.34,1.56,.64,1) both,v4Idle 3.4s ease-in-out .9s infinite}
+.mk4 .mk-w b{animation:mkPop .55s cubic-bezier(.34,1.7,.64,1) calc(.25s + var(--i)*50ms) both,mkWave 2.8s ease-in-out calc(1.4s + var(--i)*110ms) infinite}
+.mk4 .mk-s{animation:mkStamp .5s cubic-bezier(.34,1.56,.64,1) 1s both}
+.mk4 .pp{animation:mkLook 5s ease-in-out 2s infinite}
+.mk4 .fc{transform-box:fill-box;transform-origin:50% 40%;animation:mkBlink 4.2s 2.4s infinite}
+}
+@keyframes mkPop{from{scale:.2;translate:0 -1.1em;rotate:-18deg}to{scale:1;translate:0 0;rotate:0deg}}
+@keyframes mkWave{0%,60%,100%{translate:0 0;rotate:0deg}30%{translate:0 -.12em;rotate:-4deg}}
+@keyframes mkStamp{from{scale:2.4;opacity:0}to{scale:1;opacity:1}}
+@keyframes mkLook{0%,40%,100%{translate:0 0}50%,70%{translate:-4px -3px}80%,90%{translate:3px -2px}}
+@keyframes mkBlink{0%,94%,100%{scale:1 1}97%{scale:1 .1}}
+
 picture{display:contents}
 
 .tg-switch{position:fixed;left:50%;bottom:14px;translate:-50% 0;z-index:80;display:flex;gap:4px;align-items:center;background:#0B2618;color:#FAF7F0;border-radius:999px;padding:6px;font:600 13px/1 Montserrat,system-ui,sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.3);max-width:calc(100vw - 20px)}
@@ -1492,7 +1523,7 @@ picture{display:contents}
   <!-- BIG LOGO INTRO -->
   <section class="tg-intro" id="top"><div class="tg-fx" aria-hidden="true"><div class="fx-burst"></div><div class="fx-burst fx-burst2"></div><div class="fx-conf"><i style="--a:117deg;--d:33vmin;--c:#5B2A86;--r:-361deg;--t:0.21s"></i><i style="--a:34deg;--d:48vmin;--c:#fff;--r:-228deg;--t:0.02s"></i><i style="--a:151deg;--d:36vmin;--c:#fff;--r:-60deg;--t:0.21s"></i><i style="--a:45deg;--d:36vmin;--c:#5B2A86;--r:66deg;--t:0.02s"></i><i style="--a:211deg;--d:30vmin;--c:#1FA24A;--r:-363deg;--t:0.21s"></i><i style="--a:104deg;--d:33vmin;--c:#E63B2E;--r:57deg;--t:0.14s"></i><i style="--a:246deg;--d:32vmin;--c:#fff;--r:111deg;--t:0.09s"></i><i style="--a:197deg;--d:30vmin;--c:#E63B2E;--r:95deg;--t:0.12s"></i><i style="--a:191deg;--d:54vmin;--c:#0B3D1E;--r:68deg;--t:0.11s"></i><i style="--a:108deg;--d:55vmin;--c:#5B2A86;--r:224deg;--t:0.02s"></i><i style="--a:108deg;--d:45vmin;--c:#FF8A1F;--r:184deg;--t:0.07s"></i><i style="--a:353deg;--d:32vmin;--c:#0B3D1E;--r:-268deg;--t:0.09s"></i><i style="--a:336deg;--d:42vmin;--c:#5B2A86;--r:-338deg;--t:0.14s"></i><i style="--a:284deg;--d:56vmin;--c:#FF8A1F;--r:156deg;--t:0.15s"></i><i style="--a:209deg;--d:44vmin;--c:#E63B2E;--r:356deg;--t:0.12s"></i><i style="--a:239deg;--d:30vmin;--c:#5B2A86;--r:-152deg;--t:0.14s"></i><i style="--a:245deg;--d:43vmin;--c:#5B2A86;--r:-91deg;--t:0.17s"></i><i style="--a:8deg;--d:44vmin;--c:#1FA24A;--r:89deg;--t:0.12s"></i><i style="--a:79deg;--d:38vmin;--c:#5B2A86;--r:-202deg;--t:0.10s"></i><i style="--a:314deg;--d:31vmin;--c:#0B3D1E;--r:-79deg;--t:0.07s"></i><i style="--a:49deg;--d:43vmin;--c:#fff;--r:-177deg;--t:0.10s"></i><i style="--a:129deg;--d:58vmin;--c:#1FA24A;--r:-279deg;--t:0.04s"></i><i style="--a:84deg;--d:36vmin;--c:#0B3D1E;--r:265deg;--t:0.05s"></i><i style="--a:101deg;--d:33vmin;--c:#fff;--r:-105deg;--t:0.14s"></i><i style="--a:343deg;--d:51vmin;--c:#fff;--r:360deg;--t:0.16s"></i><i style="--a:266deg;--d:44vmin;--c:#5B2A86;--r:238deg;--t:0.10s"></i></div></div>
         <div class="tg-intro-inner">
-      <h1 class="tg-intro-logo"><span class="tg-sr-only">TransGlobal Food Tech</span><div class="tg-intro-sun" aria-hidden="true"></div><picture><source srcset="../../assets/img/tg-logo-intro.avif" type="image/avif"><picture><source type="image/avif" srcset="../../assets/img/tg-logo-intro.avif"><img class="tg-intro-img" src="../../assets/img/tg-logo-intro.webp" fetchpriority="high" width="520" height="420" alt="Transglobal Food Tech"></picture></picture></h1>
+      <h1 class="tg-intro-logo"><span class="tg-sr-only">TransGlobal Food Tech</span><div class="mk mk4" aria-hidden="true"><svg class="mk-em" viewBox="0 0 200 170"><path class="sw0" pathLength="1" d="M26 108 C52 152 150 146 178 80"/><circle class="gl" pathLength="1" cx="100" cy="96" r="52"/><ellipse class="mr" pathLength="1" cx="100" cy="96" rx="22" ry="52"/><path class="mr" pathLength="1" d="M48 96h104M57 68q43 14 86 0M57 124q43 -14 86 0"/><path class="lf" d="M100 44 C98 20 116 6 144 4 C146 30 128 44 100 44Z"/><path class="lv" pathLength="1" d="M100 44 C112 30 126 16 144 4"/><g class="fc"><circle cx="82" cy="92" r="11"/><circle cx="118" cy="92" r="11"/><circle class="pp" cx="84" cy="94" r="5"/><circle class="pp" cx="120" cy="94" r="5"/><path d="M86 114 q14 12 28 0"/></g><path class="sw" pathLength="1" d="M26 108 C52 152 150 146 178 80"/></svg><span class="mk-w"><span class="mk-a"><b style="--i:0">T</b><b style="--i:1">r</b><b style="--i:2">a</b><b style="--i:3">n</b><b style="--i:4">s</b></span><span class="mk-b"><b style="--i:5">g</b><b style="--i:6">l</b><b style="--i:7">o</b><b style="--i:8">b</b><b style="--i:9">a</b><b style="--i:10">l</b></span></span><span class="mk-s">Food Tech</span><span class="mk-t">Global foods &middot; Innovative solutions &middot; A healthier tomorrow</span></div></h1>
       <p class="tg-intro-lede">A food, nutrition and wellness company that works directly with farmers in India to make better products for families everywhere.</p>
       <a href="#story" class="btn-gold">Our story</a>
     </div>
