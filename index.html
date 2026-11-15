@@ -1270,6 +1270,56 @@ window.TG_ANALYTICS = {
 .tg-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .tg-intro-logo,.tg-intro-lede,.tg-intro-inner>.btn-gold{opacity:1!important;transform:none!important;animation:none!important}
 @media (max-width:900px){.hero::before{background-image:url('assets/img/hero-1000.webp')!important}}
+
+/* ===== Fairy-tale pass: gold-dust globe hero, fairy dust, growing vine, storybook details ===== */
+.hero{background:#0B2618;padding:110px 0 120px}
+.hero::before{display:none}
+.hero::after{background:radial-gradient(60% 70% at 74% 52%,rgba(198,156,94,.17),rgba(198,156,94,0) 70%)}
+.hero .hero-title{color:#FAF7F0;font-size:clamp(42px,5vw,72px)}
+.hero .hero-sub{color:rgba(250,247,240,.84)}
+.hero .btn-gold{background:#C69C5E;color:#0B2618}
+.hero-grid{align-items:center}
+.hero-visual{min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
+.tg-globe{position:relative;width:min(560px,44vw);aspect-ratio:1;flex-shrink:0}
+.tg-globe-poster{position:absolute;inset:0;width:100%;height:100%;display:block;transition:opacity 1.2s var(--ease-out);-webkit-mask-image:radial-gradient(circle,#000 62%,transparent 71%);mask-image:radial-gradient(circle,#000 62%,transparent 71%)}
+.tg-globe.is-live .tg-globe-poster{opacity:0}
+.tg-gl-globe{z-index:1}
+.hero .hero-floating-tag{position:static;background:transparent;color:#DFBE88;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;font-weight:600;line-height:1.2;text-align:center;padding:0;margin-top:6px;animation:none}
+.pillar-bar{background:#0B2618;padding-top:20px}
+@media (max-width:992px){
+  .hero{background:#0B2618;padding:76px 0 56px}
+  .hero::after{background:radial-gradient(70% 45% at 50% 72%,rgba(198,156,94,.17),rgba(198,156,94,0) 70%)}
+  .tg-globe{width:min(86vw,440px);margin-top:28px}
+  .hero .hero-floating-tag{position:static;text-align:center;margin-top:8px;font-size:20px}
+}
+/* gold leaf: a slow sheen across the big lines that sit on dark green */
+@media (prefers-reduced-motion:no-preference){
+  .hero .hero-title,.tg-window-line{background:linear-gradient(100deg,#FAF7F0 0%,#FAF7F0 40%,#F3D9A4 50%,#FAF7F0 60%,#FAF7F0 100%) 0 0/300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:tgSheen 7s linear infinite}
+}
+@keyframes tgSheen{from{background-position:100% 0}to{background-position:-50% 0}}
+/* storybook: an illuminated first letter where the story begins */
+#story .body-copy:first-of-type::first-letter{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:4.1em;line-height:.8;float:left;padding:.08em .06em 0 0;color:#8A6330}
+/* fairy dust and the vine */
+.tg-dust{position:fixed;inset:0;width:100%;height:100%;z-index:60;pointer-events:none}
+.tg-vine{position:absolute;left:0;top:0;z-index:1;pointer-events:none;overflow:visible}
+.tg-vine path.stem{fill:none;stroke:#B58A47;stroke-width:2.2;stroke-linecap:round}
+.tg-vine .leaf{fill:#2F6B3A;transform-box:fill-box;transform-origin:0% 100%;scale:.1;opacity:0;transition:scale 900ms cubic-bezier(.34,1.4,.64,1),opacity 400ms ease}
+.tg-vine .leaf.gold{fill:#C69C5E}
+.tg-vine .leaf.on{scale:1;opacity:1}
+.tg-vine .bud{fill:#E3B55F;scale:0;transform-box:fill-box;transform-origin:center;transition:scale 700ms cubic-bezier(.34,1.56,.64,1)}
+.tg-vine .bud.on{scale:1}
+.tg-intro,.hero,.pillar-bar,.tg-window,.tg-band,.osoeazy-banner,.belief-banner,footer{position:relative;z-index:2}
+/* category medallions: lean toward the pointer, a ring of gold turns behind them */
+.eco-icon.eco-photo{position:relative;overflow:visible;transition:transform 500ms var(--ease-out)}
+.eco-photo img{border-radius:50%;position:relative;z-index:1}
+.eco-icon.eco-photo::before{content:'';position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(from 0deg,#C69C5E,#F3D9A4,#2F6B3A,#C69C5E);opacity:0;transition:opacity 300ms ease;-webkit-mask:radial-gradient(circle,transparent 64%,#000 65%);mask:radial-gradient(circle,transparent 64%,#000 65%)}
+@media (hover:hover) and (pointer:fine){
+  .eco-card:hover .eco-icon.eco-photo::before{opacity:1;animation:tgTurn 4s linear infinite}
+  .eco-card:hover .eco-photo img{transform:none}
+}
+@keyframes tgTurn{to{rotate:360deg}}
+.btn-gold{will-change:transform}
+@media (prefers-reduced-motion:reduce){.eco-icon.eco-photo::before{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1305,7 +1355,7 @@ window.TG_ANALYTICS = {
       <p class="tg-intro-lede">A food, nutrition and wellness company that works directly with farmers in India to make better products for families everywhere.</p>
       <a href="#story" class="btn-gold">Our story</a>
     </div>
-    <svg class="tg-wave" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><path d="M0,128 C380,40 860,190 1440,70 L1440,170 L0,170 Z" fill="#FAF7F0" opacity=".9"/><path d="M0,112 C380,20 860,170 1440,48 L1440,92 C860,212 380,66 0,150 Z" fill="#153E28"/><path d="M0,100 C380,8 860,156 1440,34 L1440,50 C860,174 380,26 0,116 Z" fill="#C69C5E"/></svg>
+    <svg class="tg-wave" viewBox="0 0 1440 170" preserveAspectRatio="none" aria-hidden="true"><path d="M0,128 C380,40 860,190 1440,70 L1440,170 L0,170 Z" fill="#0B2618"/><path d="M0,112 C380,20 860,170 1440,48 L1440,92 C860,212 380,66 0,150 Z" fill="#153E28"/><path d="M0,100 C380,8 860,156 1440,34 L1440,50 C860,174 380,26 0,116 Z" fill="#C69C5E"/></svg>
   </section>
 
 
@@ -1318,9 +1368,7 @@ window.TG_ANALYTICS = {
         <a href="#story" class="btn-gold">Our story</a>
       </div>
       <div class="hero-visual">
-        <div class="globe-showcase">
-          <img src="assets/img/hero-1000.webp" alt="Sustainable Agriculture" width="1000" height="562" loading="lazy" decoding="async">
-        </div>
+        <div class="tg-globe" aria-hidden="true"><img class="tg-globe-poster" src="assets/img/globe-poster.webp" alt="" width="900" height="900" loading="lazy" decoding="async"></div>
         <div class="hero-floating-tag">
           From farmers to families.<br>
           From India to the world.
@@ -1699,6 +1747,102 @@ window.TG_ANALYTICS = {
   }
   function idle(){ (window.requestIdleCallback||function(f){setTimeout(f,300)})(go,{timeout:2500}); }
   if(document.readyState==='complete') idle(); else addEventListener('load',idle);
+})();
+</script>
+<script>
+/* Fairy-tale pass: globe, fairy dust, the vine, leaning medallions, buttons that reach for the pointer */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches, c=navigator.connection, save=c&&(c.saveData||/(^|-)2g/.test(c.effectiveType||''));
+  var fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if(reduce) return;
+
+  /* 1. the globe (three.js, after load) */
+  function globe(){
+    var host=document.querySelector('.tg-globe'); if(!host||save) return;
+    try{ var t=document.createElement('canvas'); if(!(t.getContext('webgl2')||t.getContext('webgl'))) return; }catch(e){ return; }
+    var o=new IntersectionObserver(function(es){ if(!es[0].isIntersecting) return; o.disconnect();
+      import('./assets/js/tg-scenes.js').then(function(m){ return m.mountGlobe(host,'assets/js/land.bin'); }).catch(function(){});
+    },{rootMargin:'900px 0px'}); o.observe(host);
+  }
+
+  /* 2. fairy dust: a few motes adrift over the page, and sparks that follow the pointer */
+  function dust(){
+    if(save) return;
+    var cv=document.createElement('canvas'); cv.className='tg-dust'; cv.setAttribute('aria-hidden','true'); document.body.appendChild(cv);
+    var x=cv.getContext('2d'), W=0, H=0, motes=[], sparks=[], raf=0, last=0, lastY=scrollY, drift=0;
+    function size(){ W=cv.width=innerWidth; H=cv.height=innerHeight; }
+    size(); addEventListener('resize',size);
+    var N=innerWidth<700?10:22;
+    for(var i=0;i<N;i++) motes.push({x:Math.random(),y:Math.random(),r:.8+Math.random()*1.8,s:.006+Math.random()*.012,p:Math.random()*6.28});
+    function star(px,py,r,a){ x.globalAlpha=a; x.beginPath(); x.moveTo(px,py-r); x.quadraticCurveTo(px,py,px+r,py); x.quadraticCurveTo(px,py,px,py+r); x.quadraticCurveTo(px,py,px-r,py); x.quadraticCurveTo(px,py,px,py-r); x.fill(); }
+    function frame(t){
+      var dt=Math.min(.05,(t-last)/1000)||.016; last=t; x.clearRect(0,0,W,H);
+      var sy=scrollY; drift+=(sy-lastY)*.0006; lastY=sy; drift*=.92;
+      x.fillStyle='#D9A94E';
+      for(var i=0;i<motes.length;i++){ var m=motes[i]; m.y-=m.s*dt+drift*(.4+m.r*.3); m.p+=dt*(.6+m.r*.2);
+        if(m.y<-.03) m.y=1.03; if(m.y>1.03) m.y=-.03;
+        var a=.22+.3*(.5+.5*Math.sin(m.p*2.3)); x.globalAlpha=a; x.beginPath(); x.arc((m.x+Math.sin(m.p)*.012)*W,m.y*H,m.r,0,6.283); x.fill(); }
+      x.fillStyle='#E9BE62';
+      for(var k=sparks.length-1;k>=0;k--){ var s=sparks[k]; s.l-=dt/s.d; if(s.l<=0){ sparks.splice(k,1); continue; }
+        s.vy+=60*dt; s.x+=s.vx*dt; s.y+=s.vy*dt; star(s.x,s.y,s.r*(.4+.6*s.l),Math.min(1,s.l*1.4)); }
+      x.globalAlpha=1; raf=requestAnimationFrame(frame);
+    }
+    function sync(){ if(document.hidden){ cancelAnimationFrame(raf); raf=0; } else if(!raf){ last=performance.now(); raf=requestAnimationFrame(frame); } }
+    document.addEventListener('visibilitychange',sync); sync();
+    if(fine){ var lx=0, ly=0;
+      addEventListener('pointermove',function(e){ var dx=e.clientX-lx, dy=e.clientY-ly, d=Math.sqrt(dx*dx+dy*dy); if(d<26||sparks.length>70) return; lx=e.clientX; ly=e.clientY;
+        for(var i=0;i<2;i++) sparks.push({x:e.clientX+(Math.random()-.5)*10,y:e.clientY+(Math.random()-.5)*10,vx:(Math.random()-.5)*40,vy:-20-Math.random()*40,r:2.5+Math.random()*4,l:1,d:.7+Math.random()*.7}); },{passive:true});
+      addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse') return; for(var i=0;i<14;i++){ var a=Math.random()*6.283, v=60+Math.random()*160; sparks.push({x:e.clientX,y:e.clientY,vx:Math.cos(a)*v,vy:Math.sin(a)*v-40,r:2.5+Math.random()*5,l:1,d:.6+Math.random()*.6}); } },{passive:true});
+    }
+  }
+
+  /* 3. the vine: grows down the margin as the story is read, leaf by leaf */
+  function vine(){
+    var NS='http://www.w3.org/2000/svg', svg=null, stem=null, len=0, marks=[], top=0, raf=0;
+    function build(){
+      if(svg){ svg.remove(); svg=null; }
+      var cont=document.querySelector('#story .container'); if(!cont) return;
+      var gutter=cont.getBoundingClientRect().left; if(gutter<84) return;
+      var a=document.querySelector('#story'), b=document.querySelector('#contact')||document.body.lastElementChild;
+      top=a.getBoundingClientRect().top+scrollY+40; var bottom=b.getBoundingClientRect().bottom+scrollY-60, h=bottom-top; if(h<600) return;
+      var cx=Math.max(34,gutter*.46), amp=Math.min(22,gutter*.2);
+      svg=document.createElementNS(NS,'svg'); svg.setAttribute('class','tg-vine'); svg.setAttribute('aria-hidden','true'); svg.setAttribute('width',gutter); svg.setAttribute('height',h); svg.style.top=top+'px';
+      var d='M'+cx+',0', pts=[];
+      for(var y=0;y<=h;y+=12){ var px=cx+Math.sin(y/150)*amp+Math.sin(y/61)*amp*.25; pts.push([px,y]); d+=' L'+px.toFixed(1)+','+y; }
+      stem=document.createElementNS(NS,'path'); stem.setAttribute('class','stem'); stem.setAttribute('d',d); svg.appendChild(stem);
+      document.body.appendChild(svg);
+      len=stem.getTotalLength(); stem.style.strokeDasharray=len; stem.style.strokeDashoffset=len;
+      marks=[]; var side=1, n=0;
+      for(var i=8;i<pts.length-4;i+=9+((i*7)%5)){ var p=pts[i], q=pts[i+1], ang=Math.atan2(q[1]-p[1],q[0]-p[0])*180/Math.PI-90; side=-side; n++;
+        var el;
+        if(n%6===0){ el=document.createElementNS(NS,'circle'); el.setAttribute('class','bud'); el.setAttribute('cx',p[0]+side*7); el.setAttribute('cy',p[1]); el.setAttribute('r',4.2); }
+        else { el=document.createElementNS(NS,'path'); el.setAttribute('class','leaf'+(n%4===0?' gold':'')); var s=.8+((i*13)%7)/10;
+          el.setAttribute('d','M0,0 C'+(6*s)+','+(-10*s)+' '+(20*s)+','+(-12*s)+' '+(26*s)+','+(-4*s)+' C'+(18*s)+','+(4*s)+' '+(7*s)+','+(5*s)+' 0,0 Z');
+          el.setAttribute('transform','translate('+p[0].toFixed(1)+','+p[1]+') rotate('+(ang+(side>0?-28:208)).toFixed(0)+')'); }
+        svg.insertBefore(el,stem); marks.push({el:el,y:p[1],on:false}); }
+      grow();
+    }
+    function grow(){ raf=0; if(!svg) return; var tip=scrollY+innerHeight*.72-top, f=Math.max(0,Math.min(1,tip/svg.height.baseVal.value));
+      stem.style.strokeDashoffset=len*(1-f);
+      for(var i=0;i<marks.length;i++){ var m=marks[i], on=m.y<tip-14; if(on!==m.on){ m.on=on; m.el.classList.toggle('on',on); } } }
+    addEventListener('scroll',function(){ if(!raf) raf=requestAnimationFrame(grow); },{passive:true});
+    var w=innerWidth, rt=0; addEventListener('resize',function(){ if(innerWidth===w) return; w=innerWidth; clearTimeout(rt); rt=setTimeout(build,250); });
+    build(); setTimeout(build,2500);
+  }
+
+  /* 4. medallions lean toward the pointer; gold buttons reach for it */
+  function lean(){
+    if(!fine) return;
+    [].forEach.call(document.querySelectorAll('.eco-card'),function(card){ var ph=card.querySelector('.eco-icon'); if(!ph) return;
+      card.addEventListener('pointermove',function(e){ var r=card.getBoundingClientRect(), nx=(e.clientX-r.left)/r.width-.5, ny=(e.clientY-r.top)/r.height-.5; ph.style.transform='perspective(500px) rotateY('+(nx*22).toFixed(1)+'deg) rotateX('+(-ny*22).toFixed(1)+'deg) scale(1.08)'; });
+      card.addEventListener('pointerleave',function(){ ph.style.transform=''; }); });
+    [].forEach.call(document.querySelectorAll('.btn-gold'),function(b){
+      b.addEventListener('pointermove',function(e){ var r=b.getBoundingClientRect(); b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.22).toFixed(1)+'px,'+((e.clientY-r.top-r.height/2)*.3).toFixed(1)+'px)'; });
+      b.addEventListener('pointerleave',function(){ b.style.transform=''; }); });
+  }
+
+  function start(){ globe(); (window.requestIdleCallback||function(f){setTimeout(f,400)})(function(){ dust(); vine(); lean(); },{timeout:3000}); }
+  if(document.readyState==='complete') start(); else addEventListener('load',start);
 })();
 </script>
 <div class="tg-consent" id="tg-consent" role="dialog" aria-live="polite" aria-labelledby="tg-consent-title" hidden>
