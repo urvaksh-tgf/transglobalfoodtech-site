@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths: ['assets/audio/lines.json', '.github/scripts/voice.mjs', '.github/workflows/voice.yml']
   schedule:
-    - cron: '17 3 * * *'
+    - cron: '40 9 * * *'
 permissions:
   contents: write
 concurrency: voice-clips
